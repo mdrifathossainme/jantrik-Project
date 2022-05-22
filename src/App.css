@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Maven+Pro:wght@700&family=Roboto+Slab:wght@700&family=Ubuntu:wght@700&display=swap');
+
+
+p{
+    font-size: 18px;
+font-family: 'Cormorant Garamond', serif;
+
+}
+h1{
+   font-family: 'Maven Pro', sans-serif; 
+}
+h2{
+    font-family: 'Roboto Slab', serif;
+}
+h4{
+font-family: 'Ubuntu', sans-serif;
+
+}
