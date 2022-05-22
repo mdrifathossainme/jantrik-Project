@@ -14,7 +14,7 @@ const HomeCarousel = () => {
         loop={true}
         autoplay={{
           delay: 3000,
-          disableOnInteraction: true,
+          disableOnInteraction: false,
         }}
         pagination={{
           clickable: true,

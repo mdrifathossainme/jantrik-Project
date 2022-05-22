@@ -26,7 +26,6 @@ const NavBar = ({children}) => {
     <>
      
       <div class="drawer drawer-end  ">
-        <img src="https://i.ibb.co/w7kc87k/call.webp" alt="" />
         <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
         
         
@@ -34,7 +33,7 @@ const NavBar = ({children}) => {
    
     <div class="w-full navbar bg-base-100 lg:px-12">
       
-      <div class="flex-1 px-2 mx-2"><img src="https://i.ibb.co/d0Fzt2W/logo.webp" alt="" /></div>
+      <div class="flex-1 px-2 mx-2"><Link to="/"><img src="https://i.ibb.co/d0Fzt2W/logo.webp" alt="" /></Link></div>
       <div class="flex-none hidden lg:block">
         <ul class="menu menu-horizontal">
    
