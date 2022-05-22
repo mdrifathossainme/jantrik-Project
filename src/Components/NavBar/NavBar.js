@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit'
-import { home } from 'react-icons-kit/icomoon/home'
 import { user } from 'react-icons-kit/fa/user'
 import CustomLInk from './CustomLInk'
+import Tobbar from './Tobbar';
 const NavBar = ({children}) => {
 
     const menuItem=<>
@@ -23,8 +23,13 @@ const NavBar = ({children}) => {
     </>
   return (
     
-    <div class="drawer drawer-end ">
-  <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
+    <>
+     
+      <div class="drawer drawer-end  ">
+        <img src="https://i.ibb.co/w7kc87k/call.webp" alt="" />
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
+        
+        
   <div class="drawer-content flex flex-col">
    
     <div class="w-full navbar bg-base-100 lg:px-12">
@@ -54,7 +59,10 @@ const NavBar = ({children}) => {
     </ul>
     
   </div>
-</div>
+
+    
+    </div>
+    </>
 
     );
 };

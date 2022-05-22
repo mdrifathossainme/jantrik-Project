@@ -32,7 +32,7 @@ const HomeCarousel = () => {
             backgroundPosition: " center",
           }}
               >
-                  <div className="px-12 pt-24">
+                  <div className="px-12 pt-12">
                       <h3 className="text-4xl">Big Sale</h3>
                       <h5 className="text-5xl mt-8 leading-[60px]">Hand Tools <br /> Circular Saw & Power Saw</h5>
                       <button className="btn btn-primary  mt-8 text-white hover:bg-success">Shop Now</button>
@@ -46,7 +46,7 @@ const HomeCarousel = () => {
             backgroundPosition: " center",
           }}
         >
-           <div className="px-12 pt-24">
+           <div className="px-12 pt-12">
                       <h3 className="text-4xl">Big Sale</h3>
                       <h5 className="text-5xl mt-8 leading-[60px]">Hand Tools <br /> Circular Saw & Power Saw</h5>
                       <button className="btn btn-primary  mt-8 text-white hover:bg-success">Shop Now</button>
