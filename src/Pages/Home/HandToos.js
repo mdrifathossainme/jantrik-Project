@@ -15,7 +15,6 @@ const HandToos = () => {
             .then(res => res.json())
         .then(data=>setHandle(data))
     }, [])
-    console.log(hproduct.length)
 
     return (
       <>

@@ -3,6 +3,8 @@ import Tobbar from '../../Components/NavBar/Tobbar';
 import Categorise from './Categorise';
 import HandToos from './HandToos';
 import HomeCarousel from './HomeCarousel';
+import Tool from './Tool';
+import Toolset from './Toolset';
 
 const Home = () => {
     return (
@@ -18,10 +20,16 @@ const Home = () => {
             <div className='categorise px-12 py-24'>
             <Categorise/>
             </div>
-            <div className='px-12 text-2xl'>
-                <h4>Hand Tools</h4>
+            <div className='px-12 '>
+                <h4 className='text-2xl'>Hand Tools</h4>
                 <div className='divaidar'></div>
                 <HandToos/>
+            </div>
+            <div className='px-12'>
+                <Toolset/>
+            </div>
+            <div className='px-12'>
+                <Tool/>
             </div>
         </>
     );

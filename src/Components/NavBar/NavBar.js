@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit'
 import { user } from 'react-icons-kit/fa/user'
 import CustomLInk from './CustomLInk'
-import Tobbar from './Tobbar';
+import {userCircleO} from 'react-icons-kit/fa/userCircleO'
 const NavBar = ({children}) => {
 
     const menuItem=<>
@@ -12,7 +12,7 @@ const NavBar = ({children}) => {
       <li><CustomLInk to="/dashBoard">DashBoard</CustomLInk></li>
      
       <li class="dropdown dropdown-hover dropdown-end  ">
-       <Icon className="hover:text-primary"  icon={user} size={30} />
+       <Icon className="hover:text-primary"  icon={userCircleO} size={30} />
       <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
          <li><CustomLInk to="/login">Login</CustomLInk></li>
       <li><CustomLInk to="/signup">Sign Up</CustomLInk></li>

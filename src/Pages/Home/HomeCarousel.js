@@ -22,7 +22,7 @@ const HomeCarousel = () => {
         navigation={true}
         modules={[Autoplay, Pagination,EffectFade ]}
         loopFillGroupWithBlank={true}
-        className="mySwiper"
+        className="homeBanner"
       >
         <SwiperSlide
           style={{
