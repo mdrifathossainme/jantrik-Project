@@ -4,6 +4,7 @@ import BusinessSummary from './BusinessSummary';
 import Categorise from './Categorise';
 import HandToos from './HandToos';
 import HomeCarousel from './HomeCarousel';
+import Review from './Review';
 import Services from './Services';
 import Tool from './Tool';
 import Toolset from './Toolset';
@@ -24,7 +25,7 @@ const Home = () => {
             </div>
             <div className='px-12 '>
                 <h4 className='text-2xl'>Hand Tools</h4>
-                <div className='divaidar'></div>
+                <div  className='divaidar mb-4'></div>
                 <HandToos/>
             </div>
             <div className='px-12'>
@@ -38,6 +39,11 @@ const Home = () => {
             </div>
             <div className='px-12'>
               <BusinessSummary/>
+            </div>
+            <div className='px-12'>
+                <h4 className='text-2xl'>Reviews</h4>
+                <div className='divaidar'></div>
+                <Review/>
             </div>
            
         </>

@@ -26,7 +26,7 @@ const Tool = () => {
           >
             <SwiperSlide className="tool1-slider">
                                {
-                    hproduct.slice(0,5).map(product => <SwiperSlide key={product._id} className="handeItem">
+                    hproduct.slice(0,6).map(product => <SwiperSlide key={product._id} className="handeItem">
                         
                         <div className=" p-4 cart-body  delay-500">
                             <span className="flex">
@@ -50,7 +50,7 @@ const Tool = () => {
             </SwiperSlide>
             <SwiperSlide className="tool1-slider">
                                {
-                    hproduct.slice(4).map(product => <SwiperSlide key={product._id} className="handeItem">
+                    hproduct.slice(1,7).reverse().map(product => <SwiperSlide key={product._id} className="handeItem">
                         
                          <div className=" p-4 cart-body  delay-500">
                             <span className="flex">
@@ -74,7 +74,7 @@ const Tool = () => {
             </SwiperSlide>
             <SwiperSlide className="tool1-slider">
                                {
-                    hproduct.slice(6).map(product => <SwiperSlide key={product._id} className="handeItem">
+                    hproduct.slice(3).reverse().map(product => <SwiperSlide key={product._id} className="handeItem">
                         
                      <div className=" p-4 cart-body  delay-500">
                             <span className="flex">

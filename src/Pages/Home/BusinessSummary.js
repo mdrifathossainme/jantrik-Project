@@ -50,6 +50,7 @@ const BusinessSummary = () => {
                     <span><button className='btn btn-success capitalize text-white'>request for quote</button></span>
                     <span> <button className='btn btn-primary capitalize text-white'>contact us</button></span>
                 </div>
+               
             </div>
         </div>
     );

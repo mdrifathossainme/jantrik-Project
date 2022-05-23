@@ -6,7 +6,7 @@ const NewArrival = () => {
     return (
         <div className='grid lg:grid-cols-2  grid-cols-1 gap-8'>
                {
-                product.slice(6).map(product =>
+                product.slice(6).reverse().map(product =>
                     <div className='border-2 p-4 rounded-md' key={product._id}>
                         <div className='flex justify-center'>
                             <img src={product.img} alt="" />
