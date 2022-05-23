@@ -12,9 +12,9 @@ const NavBar = ({children}) => {
       <li><CustomLInk to="/dashBoard">DashBoard</CustomLInk></li>
       <li><CustomLInk to="/inventory">Inventory</CustomLInk></li>
      
-      <li class="dropdown dropdown-hover dropdown-end  ">
+      <li className="dropdown dropdown-hover dropdown-end  ">
        <Icon className="hover:text-primary"  icon={userCircleO} size={30} />
-      <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+      <ul  tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
          <li><CustomLInk to="/login">Login</CustomLInk></li>
       <li><CustomLInk to="/signup">Sign Up</CustomLInk></li>
       </ul>
@@ -26,33 +26,33 @@ const NavBar = ({children}) => {
     
     <>
      
-      <div class="drawer drawer-end  ">
-        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" /> 
+      <div className="drawer drawer-end  ">
+        <input id="my-drawer-3" type="checkbox" className="drawer-toggle" /> 
         
         
-  <div class="drawer-content flex flex-col">
+  <div className="drawer-content flex flex-col">
    
-    <div class="w-full navbar bg-base-100 lg:px-12">
+    <div className="w-full navbar bg-base-100 lg:px-12">
       
-      <div class="flex-1 px-2 mx-2"><Link to="/"><img src="https://i.ibb.co/d0Fzt2W/logo.webp" alt="" /></Link></div>
-      <div class="flex-none hidden lg:block">
-        <ul class="menu menu-horizontal">
+      <div className="flex-1 px-2 mx-2"><Link to="/"><img src="https://i.ibb.co/d0Fzt2W/logo.webp" alt="" /></Link></div>
+      <div className="flex-none hidden lg:block">
+        <ul className="menu menu-horizontal">
    
           {menuItem}
         </ul>
           </div>
-        <div class="flex-none lg:hidden">
-        <label for="my-drawer-3" class="btn btn-square btn-ghost">
-         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        <div className="flex-none lg:hidden">
+        <label htmlFor="my-drawer-3" className="btn btn-square btn-ghost">
+         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
         </label>
       </div> 
     </div>
   
   {children}
   </div> 
-  <div class="drawer-side">
-    <label for="my-drawer-3" class="drawer-overlay"></label> 
-    <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
+  <div className="drawer-side">
+    <label htmlFor="my-drawer-3" className="drawer-overlay"></label> 
+    <ul className="menu p-4 overflow-y-auto w-80 bg-base-100">
      
      {menuItem}
       

@@ -39,11 +39,11 @@ const Inventory = () => {
                 <h6>
                  Order Quantity:{" "}
                   <span>
-                    <label htmlFor="ide">
+                    <label htmlhtmlFor="ide">
                       <Icon icon={minus} size={20}  />{" "}
                     </label>
                     <input className="border-2  border-gray-300 p-2 w-36 h-8 rounded-md mr-4" type="number" id="ide" />
-                    <label htmlFor="ide">
+                    <label htmlhtmlFor="ide">
                      
                       <Icon size={20} icon={plus} />
                     </label>

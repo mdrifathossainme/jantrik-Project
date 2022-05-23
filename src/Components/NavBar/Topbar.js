@@ -18,7 +18,7 @@ const Topbar = () => {
             <div className=' flex justify-around flex-1'>
                 <span className='flex items-center '>
                     <p>Language:</p>
-                     <select class="select  max-w-xs">
+                     <select className="select  max-w-xs">
                     <option>English</option>
                     <option>Japanese</option>
                     <option>Italian</option>
@@ -26,7 +26,7 @@ const Topbar = () => {
                    </span>
                 <span className='flex items-center'>
                     <p>Currency:</p>
-                     <select class="select  max-w-xs">
+                     <select className="select  max-w-xs">
                     <option>USD</option>
                     <option>EUR</option>
                     <option>CNY</option>

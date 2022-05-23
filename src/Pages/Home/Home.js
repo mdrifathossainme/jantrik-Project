@@ -14,7 +14,7 @@ import Toolset from './Toolset';
 const Home = () => {
     return (
         <>
-          <div class="divider"></div>
+          <div className="divider"></div>
             <div className='hidden lg:block'>
                 <Topbar/>
             </div>

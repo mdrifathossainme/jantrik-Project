@@ -16,7 +16,7 @@ const Tool = () => {
     <div className="grid lg:grid-cols-6  py-12 gird-cols-1 gap-8">
       <div className="py-4 lg:col-span-2 border-2">
         <h4 className="pl-4">Top Product</h4>
-        <div class="divider"></div>
+        <div className="divider"></div>
         <div>
           <Swiper
             slidesPerView={1}
