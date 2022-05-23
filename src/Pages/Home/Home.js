@@ -3,6 +3,7 @@ import Tobbar from '../../Components/NavBar/Tobbar';
 import Categorise from './Categorise';
 import HandToos from './HandToos';
 import HomeCarousel from './HomeCarousel';
+import Services from './Services';
 import Tool from './Tool';
 import Toolset from './Toolset';
 
@@ -30,6 +31,9 @@ const Home = () => {
             </div>
             <div className='px-12'>
                 <Tool/>
+            </div>
+            <div className='px-12'>
+              <Services/>
             </div>
         </>
     );
