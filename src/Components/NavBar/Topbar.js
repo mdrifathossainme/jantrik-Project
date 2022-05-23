@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'react-icons-kit'
 import {ic_search_outline} from 'react-icons-kit/md/ic_search_outline'
-const Tobbar = () => {
+const Topbar = () => {
     return (
         <div className='px-12 pb-4 flex justify-between gap-x-8'>
             
@@ -38,4 +38,4 @@ const Tobbar = () => {
     );
 };
 
-export default Tobbar;
+export default Topbar;

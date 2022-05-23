@@ -8,7 +8,7 @@ import DashBoard from './Pages/DashBoard/DashBoard';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
-import Tobbar from './Components/NavBar/Tobbar';
+import Topbar from './Components/NavBar/Topbar';
 
 function App() {
   return (
