@@ -1,5 +1,6 @@
 import React from 'react';
 import Tobbar from '../../Components/NavBar/Tobbar';
+import BusinessSummary from './BusinessSummary';
 import Categorise from './Categorise';
 import HandToos from './HandToos';
 import HomeCarousel from './HomeCarousel';
@@ -35,6 +36,10 @@ const Home = () => {
             <div className='px-12'>
               <Services/>
             </div>
+            <div className='px-12'>
+              <BusinessSummary/>
+            </div>
+           
         </>
     );
 };
