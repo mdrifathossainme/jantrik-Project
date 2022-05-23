@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./Tool.css";
 import { Navigation } from "swiper";
+import Tabs from '../../Components/Tab/Tabs'
 const Tool = () => {
   const [hproduct, setHandle] = useState([]);
 
@@ -14,7 +15,7 @@ const Tool = () => {
   return (
     <div className="grid lg:grid-cols-6  py-12 gird-cols-1 gap-8">
       <div className="py-4 lg:col-span-2 border-2">
-        <h4 className="pl-4">Top Tool</h4>
+        <h4 className="pl-4">Top Product</h4>
         <div class="divider"></div>
         <div>
           <Swiper
@@ -25,7 +26,7 @@ const Tool = () => {
           >
             <SwiperSlide className="tool1-slider">
                                {
-                    hproduct.slice(0,3).map(product => <SwiperSlide className="handeItem">
+                    hproduct.slice(0,5).map(product => <SwiperSlide key={product._id} className="handeItem">
                         
                         <div className=" p-4 cart-body  delay-500">
                             <span className="flex">
@@ -49,7 +50,7 @@ const Tool = () => {
             </SwiperSlide>
             <SwiperSlide className="tool1-slider">
                                {
-                    hproduct.slice(3,6).map(product => <SwiperSlide className="handeItem">
+                    hproduct.slice(4).map(product => <SwiperSlide key={product._id} className="handeItem">
                         
                          <div className=" p-4 cart-body  delay-500">
                             <span className="flex">
@@ -73,7 +74,7 @@ const Tool = () => {
             </SwiperSlide>
             <SwiperSlide className="tool1-slider">
                                {
-                    hproduct.slice(6).map(product => <SwiperSlide className="handeItem">
+                    hproduct.slice(6).map(product => <SwiperSlide key={product._id} className="handeItem">
                         
                      <div className=" p-4 cart-body  delay-500">
                             <span className="flex">
@@ -98,7 +99,7 @@ const Tool = () => {
           </Swiper>
         </div>
       </div>
-      <div className=" lg:col-span-4 py-12 bg-fuchsia-600"></div>
+      <div className=" lg:col-span-4"><Tabs/></div>
     </div>
   );
 };
