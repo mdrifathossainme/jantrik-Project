@@ -2,7 +2,13 @@ import React from 'react';
 import { Icon } from 'react-icons-kit'
 import { mapMarker } from 'react-icons-kit/fa/mapMarker'
 import { envelopeO } from 'react-icons-kit/fa/envelopeO'
-import {phone} from 'react-icons-kit/fa/phone'
+import { phone } from 'react-icons-kit/fa/phone'
+import { twitter } from 'react-icons-kit/fa/twitter'
+import { facebook } from 'react-icons-kit/fa/facebook'
+import { linkedin } from 'react-icons-kit/fa/linkedin'
+import {instagram} from 'react-icons-kit/fa/instagram'
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
     return (
         <>
@@ -32,24 +38,24 @@ const Footer = () => {
                 <div><h5 className='text-xl'>Information</h5></div>
                 <div className='py-4 flex flex-col gap-2'>
                     
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Site Map</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Specials</a>
-                    <a  className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Jobs</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Delivery Information</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'href="#">Order History</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Privacy Policy</a>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Site Map</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Specials</Link>
+                    <Link  className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Jobs</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Delivery Information</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">Order History</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Privacy Policy</Link>
                    
                 </div>
             </div>
             <div>
                 <div><h5 className='text-xl'>My Account</h5></div>
                 <div className='py-4 flex flex-col gap-2'>
-                     <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'href="#">My Account</a>
-                   <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Checkout</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Login</a>
-                    <a  className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Address</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Order Status</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'href="#">Site Map</a>
+                     <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">My Account</Link>
+                   <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Checkout</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Login</Link>
+                    <Link  className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Address</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Order Status</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">Site Map</Link>
                    
                    
                 </div>
@@ -57,12 +63,12 @@ const Footer = () => {
             <div>
                 <div><h5 className='text-xl'>Customer Service</h5></div>
                 <div className='py-4 flex flex-col gap-2'>
-                     <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'href="#">My Account</a>
-                   <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">New</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Gift Cards</a>
-                    <a  className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Return Policy</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Your Orders</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'href="#">Subway</a>
+                     <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">My Account</Link>
+                   <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">New</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Gift Cards</Link>
+                    <Link  className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Return Policy</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Your Orders</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">Subway</Link>
                    
                    
                 </div>
@@ -70,12 +76,12 @@ const Footer = () => {
             <div>
                 <div><h5 className='text-xl'>Let Us Help You</h5></div>
                 <div className='py-4 flex flex-col gap-2'>
-                     <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'href="#">Your Account</a>
-                   <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Your Orders</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Shipping</a>
-                    <a  className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Amazon Prime</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' href="#">Replacements</a>
-                    <a className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'href="#">Manage</a>
+                     <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">Your Account</Link>
+                   <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Your Orders</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Shipping</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Amazon Prime</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out' to="">Replacements</Link>
+                    <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">Manage</Link>
                    
                    
                 </div>
@@ -83,14 +89,14 @@ const Footer = () => {
            
             </div>
             <div className='py-4 px-12 bg-slate-200 grid lg:grid-cols-2 grid-cols-1 gap-y-4'>
-                <span className='flex gap-4 lg:justify-start justify-center'>
+                <span className='flex gap-4 lg:justify-start justify-center '>
                     <h5 className='font-semibold'> &copy;{(new Date().getFullYear())} Jantrik Made with  by Rifat Hossain</h5>
                 </span>
                 <span className='flex gap-4 lg:justify-end justify-center '>
-                        <Icon icon={phone} size={20} />
-                        <Icon icon={phone} size={20} />
-                        <Icon icon={phone} size={20} />
-                        <Icon icon={phone} size={20} />
+                        <Icon className='hover:text-primary transition delay-50 duration-300 ease-in-out cursor-pointer' icon={twitter} size={20} />
+                        <Icon className='hover:text-primary transition delay-50 duration-300 ease-in-out cursor-pointer' icon={facebook} size={20} />
+                        <Icon className='hover:text-primary transition delay-50 duration-300 ease-in-out cursor-pointer' icon={linkedin} size={20} />
+                        <Icon className='hover:text-primary transition delay-50 duration-300 ease-in-out cursor-pointer' icon={instagram} size={20} />
                 </span>
             </div>
         </>

@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
 import Topbar from './Components/NavBar/Topbar';
+import Inventory from './Pages/Inventory/Inventory';
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
      <NavBar>
        <Routes>
          <Route path='/' element={<Home/>}></Route>
-         <Route path='/home' element={<Home/>}></Route>
+          <Route path='/home' element={<Home />}></Route>
+          <Route path='/Inventory' element={<Inventory/>}/>
          <Route path='/blog' element={<Blog/>}></Route>
          <Route path='/dashboard' element={<DashBoard/>}></Route>
          <Route path='/login' element={<Login/>}></Route>
