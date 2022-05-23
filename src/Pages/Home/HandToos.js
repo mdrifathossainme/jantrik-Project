@@ -30,7 +30,7 @@ const HandToos = () => {
           loopFillGroupWithBlank={true}
             >
                      {
-                    hproduct.map(product => <SwiperSlide className="handeItem">
+                    hproduct.map(product => <SwiperSlide key={product._id} className="handeItem">
                         
                         <div className="p-8 cart-body  delay-500">
                             <h6 className={product.discount && ' absolute left-4 rounded-none top-8 btn btn-primary btn-sm text-white'}>{ product.discount}</h6>

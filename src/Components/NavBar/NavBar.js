@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit'
-import { user } from 'react-icons-kit/fa/user'
 import CustomLInk from './CustomLInk'
 import {userCircleO} from 'react-icons-kit/fa/userCircleO'
 const NavBar = ({children}) => {
@@ -34,7 +33,7 @@ const NavBar = ({children}) => {
    
     <div className="w-full navbar bg-base-100 lg:px-12">
       
-      <div className="flex-1 px-2 mx-2"><Link to="/"><img src="https://i.ibb.co/d0Fzt2W/logo.webp" alt="" /></Link></div>
+      <div className="flex-1 px-2 mx-2"><Link to="/"><img src="https://i.ibb.co/d0Fzt2W/logo.webp" alt="LOGO" /></Link></div>
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
    

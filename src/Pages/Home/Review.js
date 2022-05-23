@@ -36,7 +36,7 @@ const Review = () => {
             >
                
                         {
-                    reviews.slice(2).reverse().map(review => <SwiperSlide className="handeItem">
+                    reviews.slice(2).reverse().map(review => <SwiperSlide key={review._id} className="handeItem">
                         
                         <div className=" border-2 text-left flex items-center gap-x-4 p-4">
                             <div className="w-[250px]">
