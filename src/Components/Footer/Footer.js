@@ -82,12 +82,15 @@ const Footer = () => {
             </div>
            
             </div>
-            <div className='py-4 px-12 bg-slate-200'>
-                <span>
+            <div className='py-4 px-12 bg-slate-200 grid lg:grid-cols-2 grid-cols-1 gap-y-4'>
+                <span className='flex gap-4 lg:justify-start justify-center'>
                     <h5 className='font-semibold'> &copy;{(new Date().getFullYear())} Jantrik Made with  by Rifat Hossain</h5>
                 </span>
-                <span>
-                    
+                <span className='flex gap-4 lg:justify-end justify-center '>
+                        <Icon icon={phone} size={20} />
+                        <Icon icon={phone} size={20} />
+                        <Icon icon={phone} size={20} />
+                        <Icon icon={phone} size={20} />
                 </span>
             </div>
         </>
