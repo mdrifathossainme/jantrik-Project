@@ -1,26 +1,40 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
-
+import auth from "../firebase,init";
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile} from 'react-firebase-hooks/auth';
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navigtae = useNavigate()
     const [cerror, setCerror] = useState('')
-    
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [createUserWithEmailAndPassword, ctuser, ctloading, cterror,] = useCreateUserWithEmailAndPassword(auth);
+  const [updateProfile, updating, uperror] = useUpdateProfile(auth);
 
-    const onSubmit = data => {
+    const onSubmit =async data => {
 
         if (data.password !== data.cpassword) {
             setCerror("Password Don't Match")
 
         }
         else {
-            setCerror('')
-          reset()
+        setCerror('')
+        
+          await createUserWithEmailAndPassword(data.email, data.password)
+          updateProfile({displayName:data.name})
+          
+        
+        reset()
         
         console.log(data)   
         }
+        
        
     };
+
+    if (user||ctuser) {
+        navigtae('/')
+    }
   return (
     <div className="my-12">
       <div className="lg:w-[570px] lg:h-[600px] mx-auto border-2 px-12 py-8 rounded-md ">
@@ -108,7 +122,7 @@ const SignUp = () => {
               <h6 className=" mt-2"> I Have A Already Account <Link to="/login"><span className="text-primary"> Login </span></Link></h6>
               <div className="divider">OR</div>
               <div>
-                  <button className="btn btn-outline lg:w-full">
+                  <button onClick={()=>signInWithGoogle()} className="btn btn-outline lg:w-full">
                       <img className="w-8 mx-2" src="https://i.ibb.co/cCYwCmx/google-logo-png-webinar-optimizing-for-success-google-business-webinar-13.png" alt="" />
                       Continue With Google</button>
               </div>

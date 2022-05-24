@@ -1,29 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from 'react-icons-kit'
 import CustomLInk from './CustomLInk'
-import {userCircleO} from 'react-icons-kit/fa/userCircleO'
-const NavBar = ({children}) => {
+import { userCircleO } from 'react-icons-kit/fa/userCircleO'
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from '../../Pages/firebase,init';
 
+const NavBar = ({ children}) => {
+  const [user] = useAuthState(auth)
+
+  console.log(user)
     const menuItem=<>
     <li><CustomLInk to="/">Home</CustomLInk></li>
     <li><CustomLInk to="/blog">Blog</CustomLInk></li>
-      <li><CustomLInk to="/dashBoard">DashBoard</CustomLInk></li>
       <li><CustomLInk to="/inventory">Inventory</CustomLInk></li>
      
-      <li className="dropdown dropdown-hover dropdown-end  ">
+      {
+        user ? <>
+          
+              <li class="moda-enddropdown moda-enddropdown-center">
+            <label tabindex="0" class="moda-endbtn m-1">{
+            user.photoURL ? <>
+              <img className='w-[45px] rounded-full cursor-pointer border-2 border-primary' src={user.photoURL }alt="" />
+            
+            </> :
+              <>
+             <img className='w-[40px]' src="https://i.ibb.co/TcFkJKX/download-1.png" alt="" />
+              </>
+          } </label>
+            <ul tabindex="0" class="moda-centerdropdown-content moda-endmenu p-2 shadow bg-base-200 rounded-box w-52 z-10">
+              <li><a>My Profile</a></li>
+              <li> <Link to="/dashBoard">DashBoard</Link></li>
+            </ul>
+          </li>
+  
+          
+        
+           
+        
+        </> : <>
+             <li className="dropdown dropdown-hover dropdown-end  ">
        <Icon className="hover:text-primary"  icon={userCircleO} size={30} />
       <ul  tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-         <li><CustomLInk to="/login">Login</CustomLInk></li>
-      <li><CustomLInk to="/signup">Sign Up</CustomLInk></li>
+             <li><CustomLInk to="/login">Login</CustomLInk></li>
+                <li><CustomLInk to="/signup">Sign Up</CustomLInk></li>
+              
       </ul>
     </li>
+        </>
+      }
      
-    
     </>
   return (
     
     <>
+  
      
       <div className="drawer drawer-end  ">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" /> 
@@ -31,7 +62,7 @@ const NavBar = ({children}) => {
         
   <div className="drawer-content flex flex-col">
    
-    <div className="w-full navbar bg-base-100 lg:px-12">
+    <div className="w-full navbar bg-base-100 lg:pr-36 lg:pl-12">
       
       <div className="flex-1 px-2 mx-2"><Link to="/"><img src="https://i.ibb.co/d0Fzt2W/logo.webp" alt="LOGO" /></Link></div>
       <div className="flex-none hidden lg:block">
@@ -60,7 +91,7 @@ const NavBar = ({children}) => {
   </div>
 
     
-    </div>
+      </div>
     </>
 
     );

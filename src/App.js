@@ -10,6 +10,7 @@ import SignUp from './Pages/SignUp/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
 import Topbar from './Components/NavBar/Topbar';
 import Inventory from './Pages/Inventory/Inventory';
+import Loading from './Components/Loading/Loading';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
          <Route path='/dashboard' element={<DashBoard/>}></Route>
          <Route path='/login' element={<Login/>}></Route>
          <Route path='/signup' element={<SignUp/>}></Route>
+         <Route path='/loading' element={<Loading/>}></Route>
          <Route path='*' element={<NotFound/>}></Route>
        </Routes>
      </NavBar>
