@@ -1,19 +1,78 @@
 import React, { useEffect, useState } from "react";
-import useProducts from "../../hooks/useProducts";
-import { Icon } from "react-icons-kit";
-import { plus } from "react-icons-kit/fa/plus";
-import { minus } from "react-icons-kit/fa/minus";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import auth from "../../firebase,init";
 const Inventory = () => {
+   const [user] = useAuthState(auth);
+
   const { id } = useParams()
   const [item, setItem] = useState()
+
+  const [newaQuantity, setnewaQuantity] = useState(
+   { quantity:2346}
+  )
   
+
+
   useEffect(() => {
-    fetch(`https://immense-plains-72444.herokuapp.com/products/${id}`)
+    fetch(`http://localhost:5000/products/${id}`)
       .then(res => res.json())
     .then(data=>setItem(data))
-  },[item])
-   console.log(item)
+  }, [])
+  
+  const handleQuanty = (e) => {
+    console.log(e.target.value)
+    const { quantity, ...rest } = newaQuantity
+    const newQunaty = e.target.value
+    const newitem = { quantity: newQunaty, ...rest }
+    setnewaQuantity(newitem)
+    
+  }
+     if (item?.orderquantity > newaQuantity.quantity) {
+     alert('Minimum order quantity: 2346')
+    setnewaQuantity({ quantity: 2346 }) 
+  }
+  else if (item?.avilableQuantity < newaQuantity.quantity) {
+    alert('Maximum order quantity: 542487')
+
+       setnewaQuantity({ quantity: 542487 }) 
+  }
+
+ 
+
+
+
+
+
+  
+  const handleSubmit = (e) => {
+    e.preventDefault()
+     if (item?.orderquantity > newaQuantity.quantity) {
+     alert('Minimum order quantity: 2346')
+    setnewaQuantity({ quantity: 2346 }) 
+  }
+  else if (item?.avilableQuantity < newaQuantity.quantity) {
+    alert('Maximum order quantity: 542487')
+
+       setnewaQuantity({ quantity: 542487 }) 
+  }
+  else {
+    
+    fetch('http://localhost:5000/order', {
+      method: "POST",
+      headers: {
+        "content-type":"application/json"
+      },
+      body:JSON.stringify()
+    })
+      .then(res => res.json())
+      .then(data => {
+      console.log(data)
+    })
+
+  }
+  }
+
   return (
     <div className="w-[80%] my-12 mx-auto py-12 ">
       <div className="grid lg:grid-cols-2 grid-cols-1 gap-y-4">
@@ -38,30 +97,18 @@ const Inventory = () => {
           <h6 className=" mb-2 font-semibold">Minimum order: { item?.orderquantity}</h6>
           <h6 className=" mb-2 font-semibold">Price Per Unit: ${item?.price }</h6>
           <span>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="qunantity">
                 <h6>
-                 Order Quantity:{" "}
+                 Order Quantity:
                   <span>
-                    <label htmlhtmlFor="ide">
-                      <Icon icon={minus} size={20}  />{" "}
-                    </label>
-                    <input className="border-2  border-gray-300 p-2 w-36 h-8 rounded-md mr-4" type="number" id="ide" />
-                    <label htmlhtmlFor="ide">
-                     
-                      <Icon size={20} icon={plus} />
-                    </label>
+                 
+                    <input className="border-2 ml-2  border-gray-300 p-2 w-36 h-8 rounded-md mr-4" onChange={handleQuanty} value={newaQuantity.quantity} type="number" id="ide" />
                   </span>
                 </h6>
                 
                   <div className="quantity-form">
                       
-                    {/* <form className="my-4 flex items-center ">
-                      <input className="border-2  border-gray-300 p-2 w-36 h-8 rounded-md mr-4 " type="number" name="number" />
-                      <label>
-                        <input className="btn btn-success btn-outline btn-sm" type="submit" value="Update" />
-                      </label>
-                    </form> */}
                  <div>
                
                  </div>

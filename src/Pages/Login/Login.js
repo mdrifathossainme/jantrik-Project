@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle,signOut  } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword, useSignInWithGoogle} from "react-firebase-hooks/auth";
 import auth from "../../firebase,init";
 import Loading from "../../Components/Loading/Loading";
 
