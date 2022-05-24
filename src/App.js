@@ -8,9 +8,9 @@ import DashBoard from './Pages/DashBoard/DashBoard';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
-import Topbar from './Components/NavBar/Topbar';
 import Inventory from './Pages/Inventory/Inventory';
 import Loading from './Components/Loading/Loading';
+import RequierAuth from './Components/RequierAuth/RequierAuth';
 
 function App() {
   return (
@@ -19,7 +19,12 @@ function App() {
        <Routes>
          <Route path='/' element={<Home/>}></Route>
           <Route path='/home' element={<Home />}></Route>
-          <Route path='/Inventory' element={<Inventory/>}/>
+          <Route path='/Inventory' element={
+
+            <RequierAuth>
+              <Inventory/>
+            </RequierAuth>
+          }/>
          <Route path='/blog' element={<Blog/>}></Route>
          <Route path='/dashboard' element={<DashBoard/>}></Route>
          <Route path='/login' element={<Login/>}></Route>

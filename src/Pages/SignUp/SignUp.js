@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
-import auth from "../firebase,init";
+import auth from "../../firebase,init";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile} from 'react-firebase-hooks/auth';
 const SignUp = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
