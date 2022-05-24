@@ -11,6 +11,12 @@ import NotFound from './Pages/NotFound/NotFound';
 import Inventory from './Pages/Inventory/Inventory';
 import Loading from './Components/Loading/Loading';
 import RequierAuth from './Components/RequierAuth/RequierAuth';
+import MyOrder from './Pages/DashBoard/MyOrder';
+import AddProducts from './Pages/DashBoard/AddProducts';
+import AddReview from './Pages/DashBoard/AddReview';
+import MyProfile from './Pages/DashBoard/MyProfile';
+import Payment from './Pages/DashBoard/Payment';
+import MakeAdmin from './Pages/DashBoard/MakeAdmin';
 
 function App() {
   return (
@@ -26,10 +32,21 @@ function App() {
             </RequierAuth>
           }/>
          <Route path='/blog' element={<Blog/>}></Route>
-         <Route path='/dashboard' element={<DashBoard/>}></Route>
+          <Route path='dashboard' element={
+            <RequierAuth>
+              <DashBoard/>
+            </RequierAuth>
+         }>
+            <Route index element={<MyProfile/>}></Route>
+            <Route  path='myorder' element={<MyOrder/>}></Route>
+            <Route  path='addproducts' element={<AddProducts/>}></Route>
+            <Route  path='addreview' element={<AddReview/>}></Route>
+            <Route  path='payment' element={<Payment/>}></Route>
+            <Route  path='makeadmin' element={<MakeAdmin/>}></Route>
+            
+         </Route>
          <Route path='/login' element={<Login/>}></Route>
          <Route path='/signup' element={<SignUp/>}></Route>
-         <Route path='/loading' element={<Loading/>}></Route>
          <Route path='*' element={<NotFound/>}></Route>
        </Routes>
      </NavBar>

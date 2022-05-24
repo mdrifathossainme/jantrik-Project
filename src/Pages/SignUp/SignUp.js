@@ -8,7 +8,7 @@ const SignUp = () => {
     const navigtae = useNavigate()
     const [cerror, setCerror] = useState('')
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [createUserWithEmailAndPassword, ctuser, ctloading, cterror,] = useCreateUserWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword, ctuser, ctloading, cterror,] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true });
   const [updateProfile, updating, uperror] = useUpdateProfile(auth);
 
     const onSubmit =async data => {

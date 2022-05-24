@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle,signOut  } from "react-firebase-hooks/auth";
 import auth from "../../firebase,init";
-import { async } from "@firebase/util";
 import Loading from "../../Components/Loading/Loading";
 
 const Login = () => {
@@ -12,7 +11,8 @@ const Login = () => {
     const [emailerror, setEmailCerror] = useState('');
     const [passerror, setpassCerror] = useState('');
     const [signInWithEmailAndPassword,epuser,eploading,eperror] = useSignInWithEmailAndPassword(auth);
-
+   const location=useLocation();
+    const navigate=useNavigate();
   
   
   const onSubmit = async data => { 
@@ -32,6 +32,11 @@ const Login = () => {
   };
   if (eploading) {
     return <Loading/>
+  }
+  const from= location.state?.from?.pathname ||"/"
+
+  if (user) {
+        navigate(from, {replace:true})
   }
  
   
