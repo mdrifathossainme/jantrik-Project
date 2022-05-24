@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 
 const NewArrival = () => {
@@ -22,7 +23,7 @@ const NewArrival = () => {
                             </span>
                         </div>
                         <div className='pt-4'>
-                            <button  className='btn btn-primary text-white w-full'>Book Now</button>
+                           <Link to={`/inventory/${product._id}`} > <button  className='btn btn-primary text-white w-full'>Book Now</button></Link>
                         </div>
                   </div> )  
                 } 

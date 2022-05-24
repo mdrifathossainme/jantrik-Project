@@ -10,8 +10,6 @@ import {ic_logout} from 'react-icons-kit/md/ic_logout'
 const NavBar = ({ children }) => {
   const [user] = useAuthState(auth);
   
-
-  console.log(user);
   const menuItem = (
     <>
       <li>
