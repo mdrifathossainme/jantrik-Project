@@ -57,7 +57,7 @@ const NavBar = ({ children }) => {
               </li>
               <li>
                 
-                <Link to="/dashBoard">My Order</Link>
+                <Link to="/dashBoard/myorder">My Order</Link>
               </li>
               <li>
                 <button onClick={() => signOut(auth)}>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase,init";
+import {  toast } from 'react-toastify';
 const Inventory = () => {
    const [user] = useAuthState(auth);
 
@@ -15,13 +16,13 @@ const Inventory = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`https://immense-plains-72444.herokuapp.com/products/${id}`)
       .then(res => res.json())
     .then(data=>setItem(data))
-  }, [])
+  }, [item])
   
   const handleQuanty = (e) => {
-    console.log(e.target.value)
+   
     const { quantity, ...rest } = newaQuantity
     const newQunaty = e.target.value
     const newitem = { quantity: newQunaty, ...rest }
@@ -38,13 +39,23 @@ const Inventory = () => {
        setnewaQuantity({ quantity: 542487 }) 
   }
 
+  const order = {
+    username: user.displayName,
+    email: user.email,
+    productname: item?.name,
+    quantity: newaQuantity.quantity,
+    price:item?.price,
+    totalPrice: newaQuantity.quantity * item?.price,
+    img:item?.img
+    
+  }
  
 
 
 
 
 
-  
+
   const handleSubmit = (e) => {
     e.preventDefault()
      if (item?.orderquantity > newaQuantity.quantity) {
@@ -58,19 +69,26 @@ const Inventory = () => {
   }
   else {
     
-    fetch('http://localhost:5000/order', {
+    fetch('https://immense-plains-72444.herokuapp.com/order', {
       method: "POST",
       headers: {
         "content-type":"application/json"
       },
-      body:JSON.stringify()
+      body:JSON.stringify(order)
     })
       .then(res => res.json())
       .then(data => {
-      console.log(data)
+        if (data.acknowledged === true) {
+          toast.success('Your order has been completed')
+        }
+        if (data.success === false) {
+          toast.error('You have already ordered this product')
+          
+        }
     })
 
-  }
+    }
+    
   }
 
   return (

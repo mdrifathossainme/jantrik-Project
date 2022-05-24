@@ -9,7 +9,6 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
 import Inventory from './Pages/Inventory/Inventory';
-import Loading from './Components/Loading/Loading';
 import RequierAuth from './Components/RequierAuth/RequierAuth';
 import MyOrder from './Pages/DashBoard/MyOrder';
 import AddProducts from './Pages/DashBoard/AddProducts';
@@ -17,10 +16,12 @@ import AddReview from './Pages/DashBoard/AddReview';
 import MyProfile from './Pages/DashBoard/MyProfile';
 import Payment from './Pages/DashBoard/Payment';
 import MakeAdmin from './Pages/DashBoard/MakeAdmin';
-
+import { ToastContainer } from 'react-toastify';
+ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
+       <ToastContainer />
      <NavBar>
        <Routes>
          <Route path='/' element={<Home/>}></Route>
@@ -49,7 +50,8 @@ function App() {
          <Route path='/signup' element={<SignUp/>}></Route>
          <Route path='*' element={<NotFound/>}></Route>
        </Routes>
-     </NavBar>
+      </NavBar>
+     
     </div>
   );
 }
