@@ -8,7 +8,7 @@ const Tool = () => {
   const [hproduct, setHandle] = useState([]);
 
   useEffect(() => {
-    fetch("handeProduct.json")
+    fetch("https://immense-plains-72444.herokuapp.com/products")
       .then((res) => res.json())
       .then((data) => setHandle(data));
   }, []);
