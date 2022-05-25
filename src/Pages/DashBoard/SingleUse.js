@@ -5,7 +5,10 @@ const SingleUse = ({ user, index, refetch }) => {
     const{email}=user
     const makeAdmin = () => {
         fetch(`http://localhost:5000/user/admin/${email}`, {
-            method:"PUT"
+            method: "PUT",
+            headers: {
+        "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
+      }
         })
         .then(res=>res.json())
             .then(data => {

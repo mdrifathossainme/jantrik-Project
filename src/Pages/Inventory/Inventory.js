@@ -16,7 +16,12 @@ const Inventory = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`http://localhost:5000/products/${id}`,{
+      method: "GET",
+      headers: {
+        "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
+      }
+    })
       .then(res => res.json())
     .then(data=>setItem(data))
   }, [item])
@@ -72,7 +77,8 @@ const Inventory = () => {
     fetch('http://localhost:5000/order', {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "content-type": "application/json",
+        "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
       },
       body:JSON.stringify(order)
     })

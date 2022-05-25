@@ -8,7 +8,11 @@ const DeletedModal = ({ deleteModald, setDetedModal,products,setProducts}) => {
         console.log(id)
         const url=`http://localhost:5000/orderdeleted/${id}`
         fetch(url, {
-           method:"DELETE" 
+           method:"DELETE" ,
+            headers: {
+        "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
+      }
+       
         })
             .then(res => res.json())
             .then(data => {

@@ -26,16 +26,6 @@ const MyOrder = () => {
       .then(data => setProducts(data))
     
   },[])
-  
-// const {data:products , isLoading, refetch}=useQuery(['user',crefech],()=> fetch( url,{
-//     method:'GET'
-// }).then(res=>res.json()))
-
-
-  // if (isLoading) {
-  //     <Loading/>
-  // }
-  
   return (
     <>
       <div className="overflow-x-auto">
