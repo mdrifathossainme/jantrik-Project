@@ -11,7 +11,7 @@ const HandToos = () => {
     const [hproduct,setHandle]=useState([])
 
     useEffect(() => {
-        fetch('https://immense-plains-72444.herokuapp.com/products')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
         .then(data=>setHandle(data))
     }, [])

@@ -9,6 +9,12 @@ import { signOut } from "firebase/auth";
 import {ic_logout} from 'react-icons-kit/md/ic_logout'
 const NavBar = ({ children }) => {
   const [user] = useAuthState(auth);
+
+
+  const handleLogout = () => {
+      signOut(auth)
+    localStorage.removeItem('accessToken')
+  }
   
   const menuItem = (
     <>
@@ -60,7 +66,7 @@ const NavBar = ({ children }) => {
                 <Link to="/dashBoard/myorder">My Order</Link>
               </li>
               <li>
-                <button onClick={() => signOut(auth)}>
+                <button onClick={handleLogout}>
                   <Icon icon={ic_logout}/> <span>Logout</span>
                 </button>
               </li>

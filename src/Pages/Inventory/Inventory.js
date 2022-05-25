@@ -16,7 +16,7 @@ const Inventory = () => {
 
 
   useEffect(() => {
-    fetch(`https://immense-plains-72444.herokuapp.com/products/${id}`)
+    fetch(`http://localhost:5000/products/${id}`)
       .then(res => res.json())
     .then(data=>setItem(data))
   }, [item])
@@ -69,10 +69,10 @@ const Inventory = () => {
   }
   else {
     
-    fetch('https://immense-plains-72444.herokuapp.com/order', {
+    fetch('http://localhost:5000/order', {
       method: "POST",
       headers: {
-        "content-type":"application/json"
+        "content-type": "application/json"
       },
       body:JSON.stringify(order)
     })

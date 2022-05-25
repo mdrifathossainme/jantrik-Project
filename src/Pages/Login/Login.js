@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle} from "react-firebase-hooks/auth";
 import auth from "../../firebase,init";
 import Loading from "../../Components/Loading/Loading";
+import UseToken from "../../hooks/useToken";
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -23,22 +24,23 @@ const Login = () => {
     else {
       signInWithEmailAndPassword(data.email, data.password)
       reset()
+       const[token]=UseToken(user)
     }
-  
-    
- 
-
            
   };
+
+
   if (eploading) {
     return <Loading/>
   }
+
+
+
   const from= location.state?.from?.pathname ||"/"
 
   if (user) {
         navigate(from, {replace:true})
   }
- 
   
   return (
     <div className="my-12">

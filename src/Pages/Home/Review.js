@@ -38,9 +38,9 @@ const Review = () => {
                         {
                     reviews.slice(2).reverse().map(review => <SwiperSlide key={review._id} className="handeItem">
                         
-                        <div className=" border-2 text-left flex items-center gap-x-4 p-4">
-                            <div className="w-[250px]">
-                                <img className="w-[100px] h-[100px] rounded-full" src={review.img} alt="" />
+                        <div className=" border-2 text-left flex lg:flex-row flex-col items-center gap-x-4 lg:p-4 p-8">
+                            <div className="lg:w-[250px]">
+                                <img className="lg:w-[100px] lg:h-[100px] w-[80px] h-[80px] rounded-full" src={review.img} alt="" />
                             </div>
                             <div className="">
                                 <h4>{review.name}</h4>
