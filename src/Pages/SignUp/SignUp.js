@@ -5,36 +5,36 @@ import auth from "../../firebase,init";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile} from 'react-firebase-hooks/auth';
 import UseToken from "../../hooks/useToken";
 const SignUp = () => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const navigtae = useNavigate()
-    const [cerror, setCerror] = useState('')
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [createUserWithEmailAndPassword, ctuser, ctloading, cterror,] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true });
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const navigtae = useNavigate()
+  const [cerror, setCerror] = useState('')
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [createUserWithEmailAndPassword, ctuser, ctloading, cterror,] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, uperror] = useUpdateProfile(auth);
 
-    const onSubmit =async data => {
+  const onSubmit = async data => {
 
-        if (data.password !== data.cpassword) {
-            setCerror("Password Don't Match")
+    if (data.password !== data.cpassword) {
+      setCerror("Password Don't Match")
 
-        }
-        else {
-        setCerror('')
+    }
+    else {
+      setCerror('')
         
-          await createUserWithEmailAndPassword(data.email, data.password)
-          updateProfile({displayName:data.name})
+      await createUserWithEmailAndPassword(data.email, data.password)
+      updateProfile({ displayName: data.name })
           
         
-        reset()
+      reset()
         
-        }
+    }
         
        
   };
-  const[token]=UseToken(user||ctuser)
+ const [token]=UseToken(user||ctuser)
   
 
-    if (token) {
+  if (token) {
         navigtae('/')
     }
   return (

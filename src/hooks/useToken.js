@@ -12,8 +12,9 @@ const UseToken = user => {
             name,
             img
         }
+        console.log(email)
          if(email){
-            fetch(`http://localhost:5000/user/${email}`,{
+            fetch(`http://localhost:5000//user/${email}`,{
                 method:"PUT",
                 headers:{
                     'content-type':'application/json'

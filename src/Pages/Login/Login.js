@@ -24,13 +24,13 @@ const Login = () => {
     else {
       signInWithEmailAndPassword(data.email, data.password)
       reset()
-       const[token]=UseToken(user)
+  
     }
-           
+             
   };
-
-
-  if (eploading) {
+  
+const [token]=UseToken(user||eperror)
+  if (eploading||loading) {
     return <Loading/>
   }
 
