@@ -29,8 +29,8 @@ const NavBar = ({ children }) => {
       </li>
       {user ? (
         <>
-          <li class="moda-enddropdown moda-enddropdown-center">
-            <label tabindex="0" class="moda-endbtn m-1">
+          <li className="moda-enddropdown moda-enddropdown-center">
+            <label ctabIndex="0" className="moda-endbtn m-1">
               {user.photoURL ? (
                 <>
                   <img
@@ -50,8 +50,8 @@ const NavBar = ({ children }) => {
               )}
             </label>
             <ul
-              tabindex="0"
-              class="moda-centerdropdown-content moda-endmenu p-2 shadow bg-base-200 rounded-box w-52 z-10"
+              ctabIndex="0"
+              className="moda-centerdropdown-content moda-endmenu p-2 shadow bg-base-200 rounded-box w-52 z-10"
             >
               <li>
                
@@ -82,7 +82,7 @@ const NavBar = ({ children }) => {
           <li className="dropdown dropdown-hover dropdown-end  ">
             <Icon className="hover:text-primary" icon={userCircleO} size={30} />
             <ul
-              tabIndex="0"
+              ctabIndex="0"
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>

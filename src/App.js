@@ -15,7 +15,7 @@ import AddProducts from './Pages/DashBoard/AddProducts';
 import AddReview from './Pages/DashBoard/AddReview';
 import MyProfile from './Pages/DashBoard/MyProfile';
 import Payment from './Pages/DashBoard/Payment';
-import MakeAdmin from './Pages/DashBoard/MakeAdmin';
+import AllUser from './Pages/DashBoard/AllUser';
 import { ToastContainer } from 'react-toastify';
  import 'react-toastify/dist/ReactToastify.css';
 function App() {
@@ -43,7 +43,7 @@ function App() {
             <Route  path='addproducts' element={<AddProducts/>}></Route>
             <Route  path='addreview' element={<AddReview/>}></Route>
             <Route  path='payment' element={<Payment/>}></Route>
-            <Route  path='makeadmin' element={<MakeAdmin/>}></Route>
+            <Route  path='AllUser' element={<AllUser/>}></Route>
             
          </Route>
          <Route path='/login' element={<Login/>}></Route>

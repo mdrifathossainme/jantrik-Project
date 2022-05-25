@@ -10,22 +10,31 @@ const MyOrder = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
   const [deleteModald, setDetedModal] = useState(null);
+  const [products, setProducts ]= useState()
 
-const url = `http://localhost:5000/myorder?email=${email}`;
+  const url = `http://localhost:5000/myorder?email=${email}`;
   
-const {data:products , isLoading, refetch}=useQuery('user',()=> fetch( url,{
-    method:'GET'
-}).then(res=>res.json()))
+
+  useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => setProducts(data))
+    
+  },[])
+  
+// const {data:products , isLoading, refetch}=useQuery(['user',crefech],()=> fetch( url,{
+//     method:'GET'
+// }).then(res=>res.json()))
 
 
-  if (isLoading) {
-      <Loading/>
-  }
+  // if (isLoading) {
+  //     <Loading/>
+  // }
   
   return (
     <>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th>No.</th>
@@ -43,8 +52,8 @@ const {data:products , isLoading, refetch}=useQuery('user',()=> fetch( url,{
               <tr key={pt._id}>
                 <th>{index + 1}</th>
                 <td>
-                  <div class="avatar">
-                    <div class="w-16 rounded">
+                  <div className="avatar">
+                    <div className="w-16 rounded">
                       <img src={pt.img} />
                     </div>
                   </div>
@@ -61,7 +70,7 @@ const {data:products , isLoading, refetch}=useQuery('user',()=> fetch( url,{
                   </Link>
                 </td>
                 <td>
-                  <label for="deletedModal" onClick={()=>setDetedModal(pt)} class="btn btn-error btn-outline btn-xs modal-button"> Deleted</label>
+                  <label for="deletedModal" onClick={()=>setDetedModal(pt)} className="btn btn-error btn-outline btn-xs modal-button"> Deleted</label>
                 </td>
               </tr>
             ))}
@@ -70,7 +79,7 @@ const {data:products , isLoading, refetch}=useQuery('user',()=> fetch( url,{
       </div>
 
       {
-        deleteModald && <DeletedModal refetch={refetch}  deleteModald={deleteModald} setDetedModal={setDetedModal}></DeletedModal>
+        deleteModald && <DeletedModal setProducts={setProducts} products={products}   deleteModald={deleteModald} setDetedModal={setDetedModal}></DeletedModal>
       }
     </>
   );

@@ -31,7 +31,7 @@ const SignUp = () => {
         
        
   };
- const [token]=UseToken(user||ctuser)
+  const [token] = UseToken(ctuser||user)
   
 
   if (token) {
