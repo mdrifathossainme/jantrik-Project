@@ -16,7 +16,12 @@ const MyOrder = () => {
   
 
   useEffect(() => {
-    fetch(url)
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
+      }
+    })
       .then(res => res.json())
       .then(data => setProducts(data))
     

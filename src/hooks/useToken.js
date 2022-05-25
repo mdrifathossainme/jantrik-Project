@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const UseToken = user => {
+const useToken = user => {
     const [token, setToken] = useState('')
     useEffect(() => {
         const email = user?.user?.email
@@ -8,7 +8,6 @@ const UseToken = user => {
         const createUser = {
             email
         }
-        console.log(user,createUser)
          if(email){
             fetch(`http://localhost:5000/user/${email}`,{
                 method:"PUT",
@@ -19,7 +18,11 @@ const UseToken = user => {
             })
             .then(res=>res.json())
             .then(data=>{
-              console.log(data)      
+                const token = data.token  
+                localStorage.setItem('asscessToken', token)
+
+                setToken(token)   
+              
          })
         }
            
@@ -30,4 +33,4 @@ const UseToken = user => {
 
 };
 
-export default UseToken;
+export default useToken;

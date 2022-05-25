@@ -1,23 +1,28 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle} from "react-firebase-hooks/auth";
 import auth from "../../firebase,init";
 import Loading from "../../Components/Loading/Loading";
-import UseToken from "../../hooks/useToken";
+import useToken from "../../hooks/useToken";
+
 
 const Login = () => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm();
-    const [signInWithGoogle, user, loading, gerror] = useSignInWithGoogle(auth);
-    const [emailerror, setEmailCerror] = useState('');
-    const [passerror, setpassCerror] = useState('');
-    const [signInWithEmailAndPassword,epuser,eploading,eperror] = useSignInWithEmailAndPassword(auth);
-   const location=useLocation();
-    const navigate=useNavigate();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const [signInWithGoogle, user, loading, gerror] = useSignInWithGoogle(auth);
+  const [emailerror, setEmailCerror] = useState('');
+  const [passerror, setpassCerror] = useState('');
+  const [signInWithEmailAndPassword, epuser, eploading, eperror] = useSignInWithEmailAndPassword(auth);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [token] = useToken(user||epuser )
   
-  
+
+ 
+
+ 
   const onSubmit = async data => { 
-    
+     
     if (eperror) {
       console.log('errro')
     }
@@ -26,21 +31,23 @@ const Login = () => {
       reset()
   
     }
-             
   };
+  let from = location.state?.from?.pathname || "/"
+
+   useEffect(() => {
+     if (token) {
+        navigate(from, {replace:true})
+  }
+  },[token,from,navigate])
   
-const [token]=UseToken(user||eperror)
   if (eploading||loading) {
     return <Loading/>
   }
 
 
 
-  const from= location.state?.from?.pathname ||"/"
-
-  if (user) {
-        navigate(from, {replace:true})
-  }
+  
+  
   
   return (
     <div className="my-12">
