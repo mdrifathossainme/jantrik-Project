@@ -6,7 +6,7 @@ import auth from "../../firebase,init";
 import DeletedModal from "./DeletedModal";
 import Loading from '../../Components/Loading/Loading'  
 
-const MyOrder = () => {
+const MyOrder = ({paymentIntent}) => {
   const [user] = useAuthState(auth);
   const email = user?.email;
   const [deleteModald, setDetedModal] = useState(null);
@@ -25,7 +25,8 @@ const MyOrder = () => {
       .then(res => res.json())
       .then(data => setProducts(data))
     
-  },[])
+  }, [])
+  console.log(products)
   return (
     <>
       <div className="overflow-x-auto">
@@ -64,10 +65,16 @@ const MyOrder = () => {
                       Payment
                     </button>
 
-                  </Link>:"Paid"}
+                    </Link> : <>
+                      <span className="text-success font-bold">
+                        PAID
+                      </span>
+                      <h6>{paymentIntent}</h6>
+                    </>}
                 </td>
                 <td>
-                  <label for="deletedModal" onClick={()=>setDetedModal(pt)} className="btn btn-error btn-outline btn-xs modal-button"> Deleted</label>
+                  {!pt.paid&& <label for="deletedModal" onClick={()=>setDetedModal(pt)} className="btn btn-error btn-outline btn-xs modal-button"> Deleted</label>}
+                 
                 </td>
               </tr>
             ))}

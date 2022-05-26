@@ -23,12 +23,13 @@ const Payment = () => {
        <>
         <div class="card px-12 my-8 w-[50%] bg-base-100 shadow-xl ">
         <div class="card-body">
-            <h2 class="card-title text-success font-bold">Hello {data?.patientNanme} </h2>
+            <h2 class="card-title text-success font-bold">Hello {data.username}  </h2>
             <h2 className='text-2xl font-semibold'>
-                Place pay For {data?.treatment}
+                Place pay For <span className='text-success font-bold'>{data?.productname}</span>
             </h2>
-            <p>You Appointment{data?.date } Time {data?.slot}</p>
-            <p className='font-bold'>You Payment : ${data?.price}</p>
+                    <h6 className='font-bold'>Qunatity: { data.quantity}</h6>
+                    <h6 className='font-bold'>Price per unit: ${ data.price}</h6>
+                    <h6 className='font-bold'>Total price: ${ data.totalPrice}</h6>
           
         </div>
         </div>

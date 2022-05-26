@@ -1,8 +1,9 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import Loading from '../../Components/Loading/Loading';
+import MyOrder from './MyOrder';
 
-const CheckoutForm = ({data}) => {
+const CheckoutForm = ({data }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cartError,setCartErro]=useState('')
@@ -84,7 +85,7 @@ const {_id,price,patient,patientName}=data;
               transactionId:paymentIntent.id
           }
 
-          fetch(`http://localhost:5000/booking/${_id}`,{
+          fetch(`http://localhost:5000/complateorder/${_id}`,{
             method:"PATCH",
             headers:{
                 'content-type':"application/json",
@@ -133,8 +134,8 @@ const {_id,price,patient,patientName}=data;
         }
          {
             success&&<div >
-               <p className='text-green-500'> {success}</p>
-               <p > Your Trangation Id <span className='text-orange-500 font-bold'>{paymentIntent}</span> </p>
+               <h6 className='text-green-500'> {success}</h6>
+            <h6 > Your Trangation Id <span className='text-orange-500 font-bold'>{paymentIntent}</span> </h6>
             </div>
         }
         
