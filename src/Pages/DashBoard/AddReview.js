@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase,init';
 
 const AddReview = () => {
@@ -7,20 +8,33 @@ const [user]=useAuthState(auth)
 
         const handleReview = (e) => {
         e.preventDefault()
-        const review = e.target.review.value;
+        const reviwe = e.target.review.value;
         const name=user.displayName
-        const start='ttps://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png'
+        const start='https://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png'
         const img=user.photoURL? user.photoURL:"https://i.ibb.co/TcFkJKX/download-1.png"
 
             const upReciew = {
-                review,
+                reviwe,
                 name,
                 start,
                 img,
             }
-    console.log(upReciew)
-
-
+            
+        const url=`http://localhost:5000/review`
+        fetch(url, {
+            method: "POST",
+            headers:{
+                'content-type': "application/json",
+                "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
+            }
+            ,body:JSON.stringify(upReciew)
+        }).then(res => res.json())
+            .then(data => {
+                console.log(data)
+                e.target.reset()
+                toast('Thank For Your Review')
+               
+        })
     }
     return (
         <>

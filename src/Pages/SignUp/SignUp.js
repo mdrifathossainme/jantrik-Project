@@ -22,7 +22,7 @@ const SignUp = () => {
       setCerror('')
         
       await createUserWithEmailAndPassword(data.email, data.password)
-      updateProfile({ displayName: data.name })
+      await updateProfile({ displayName: data.displayName })
           
         
       reset()
