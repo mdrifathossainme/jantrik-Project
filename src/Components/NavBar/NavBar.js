@@ -23,12 +23,6 @@ const NavBar = ({ children }) => {
       <li>
         <CustomLInk to="/">Home</CustomLInk>
       </li>
-      <li>
-        <CustomLInk to="/blog">Blog</CustomLInk>
-      </li>
-      <li>
-        <CustomLInk to="/inventory">Inventory</CustomLInk>
-      </li>
       {user ? (
         <>
           <li className="moda-enddropdown moda-enddropdown-center">

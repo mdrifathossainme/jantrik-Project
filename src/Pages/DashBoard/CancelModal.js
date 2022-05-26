@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const CancelModal = ({ cancelModal,setCancelModal,refetch }) => {
    
     const handleOrderDelete = (id) => {
-          const url=`http://localhost:5000/orderdeleted/${id}`
+          const url=`https://immense-plains-72444.herokuapp.com/orderdeleted/${id}`
         fetch(url, {
            method:"DELETE" ,
             headers: {

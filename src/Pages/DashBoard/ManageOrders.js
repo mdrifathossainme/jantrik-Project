@@ -5,7 +5,7 @@ import CancelModal from "./CancelModal";
 
 
 const MyOrder = () => {
-    const url='http://localhost:5000/manageorder'
+    const url='https://immense-plains-72444.herokuapp.com/manageorder'
     const { data, isLoading, refetch } = useQuery('allorder', () => fetch(url).then(res => res.json()))
     const [cancelModal,setCancelModal]=useState(null)
     

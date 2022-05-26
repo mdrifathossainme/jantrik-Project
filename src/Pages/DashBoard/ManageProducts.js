@@ -6,7 +6,7 @@ import ProductModal from "./ProductModal";
 
 
 const  ManageProducts = () => {
-    const url='http://localhost:5000/products'
+    const url='https://immense-plains-72444.herokuapp.com/products'
     const { data, isLoading, refetch } = useQuery('allorder', () => fetch(url,{
       method: "GET",
       headers: {
