@@ -15,7 +15,7 @@ const UpadeModal = ({ setIpn,user ,refetch}) => {
             adress
         }
    
-        const url=`http://localhost:5000/user/upprofile/${user.email}`
+        const url=`https://immense-plains-72444.herokuapp.com/user/upprofile/${user.email}`
         fetch(url, {
             method: "PUT",
             headers:{

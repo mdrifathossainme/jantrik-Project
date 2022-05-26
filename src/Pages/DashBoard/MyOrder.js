@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import auth from "../../firebase,init";
-import DeletedModal from "./DeletedModal";
-import Loading from '../../Components/Loading/Loading'  
+import DeletedModal from "./DeletedModal";  
 
 const MyOrder = ({paymentIntent}) => {
   const [user] = useAuthState(auth);
@@ -26,7 +24,6 @@ const MyOrder = ({paymentIntent}) => {
       .then(data => setProducts(data))
     
   }, [])
-  console.log(products)
   return (
     <>
       <div className="overflow-x-auto">
@@ -34,7 +31,7 @@ const MyOrder = ({paymentIntent}) => {
           <thead>
             <tr>
               <th>No.</th>
-              <th>Avatar</th>
+              <th>Photo</th>
               <th>Product</th>
               <th>Quantity</th>
               <th>Price</th>

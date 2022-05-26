@@ -47,12 +47,22 @@ const DashBoard = () => {
             <Link to="/dashboard/addreview"> Reviews</Link>
           </li>}
        
-         {admin&&  <li>
+
+          {admin&&<li>
+            <Link to="/dashboard/manageorders"> Manage Orders</Link>
+          </li>}
+          {admin&&<li>
+            <Link to="/dashboard/manageproducts">Manage Products</Link>
+          </li>}
+          {admin&&  <li>
             <Link to="/dashboard/addproduct">Add Product</Link>
           </li>}
+
+          
           {admin&&<li>
             <Link to="/dashboard/AllUser">All User</Link>
           </li>}
+
         </ul>
       </div>
     </div>
