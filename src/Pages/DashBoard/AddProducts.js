@@ -58,7 +58,7 @@ const AddProducts = () => {
             .then(data => {
                 if (data.acknowledged) {
                     toast.success('Product Add Success') 
-                  //  reset()
+                   reset()
                 }
                 
             

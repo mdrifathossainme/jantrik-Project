@@ -44,9 +44,9 @@ const MyProfile = () => {
                     <h1 className='text-3xl font-bold '>{user?.displayName}</h1>
                     <h2 className='mt-2'>Email : { user?.email}</h2>
                     <div className='py-12'>
-                     <h2 className='mt-4'>Company Name : { data.eompany}</h2>
-                    <h2 className='mt-4'>Phone : { data.phone}</h2>
-                    <h2 className='mt-4'>Address : { data.adress}</h2>
+                     <h2 className='mt-4'>Company Name : { data?.eompany}</h2>
+                    <h2 className='mt-4'>Phone : { data?.phone}</h2>
+                    <h2 className='mt-4'>Address : { data?.adress}</h2>
                    
                     </div>
                 </div>
