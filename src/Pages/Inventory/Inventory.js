@@ -16,7 +16,7 @@ const Inventory = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`,{
+    fetch(`https://immense-plains-72444.herokuapp.com/products/${id}`,{
       method: "GET",
       headers: {
         "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
@@ -74,7 +74,7 @@ const Inventory = () => {
   }
   else {
     
-    fetch('http://localhost:5000/order', {
+    fetch('https://immense-plains-72444.herokuapp.com/order', {
       method: "POST",
       headers: {
         "content-type": "application/json",

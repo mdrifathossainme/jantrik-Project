@@ -10,11 +10,19 @@ const SingleUse = ({ user, index, refetch }) => {
         "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
       }
         })
-        .then(res=>res.json())
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('Only Admin Make A Admin')
+                }
+                return res.json()
+            }
+               )
             .then(data => {
-                console.log(data)
-            toast.success('Amdin Done')
-                refetch()
+                if (data.modifiedCount > 0) {
+                 toast.success('Admin Done')
+                refetch()  
+               }
+                
         })
     }
     return (

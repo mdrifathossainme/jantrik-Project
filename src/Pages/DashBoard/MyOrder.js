@@ -12,7 +12,7 @@ const MyOrder = () => {
   const [deleteModald, setDetedModal] = useState(null);
   const [products, setProducts ]= useState()
 
-  const url = `http://localhost:5000/myorder?email=${email}`;
+  const url = `https://immense-plains-72444.herokuapp.com/myorder?email=${email}`;
   
 
   useEffect(() => {
@@ -58,11 +58,13 @@ const MyOrder = () => {
                 <td>${pt.price}</td>
                 <td>${pt.totalPrice}</td>
                 <td>
-                  <Link to="/dashboard/payment">
-                    <button  className="btn btn-success btn-outline btn-xs">
+                  {!pt.paid ?
+                    <Link to={`/dashboard/payment/${pt._id}`} >
+                      <button  className="btn btn-success btn-outline btn-xs">
                       Payment
                     </button>
-                  </Link>
+
+                  </Link>:"Paid"}
                 </td>
                 <td>
                   <label for="deletedModal" onClick={()=>setDetedModal(pt)} className="btn btn-error btn-outline btn-xs modal-button"> Deleted</label>
