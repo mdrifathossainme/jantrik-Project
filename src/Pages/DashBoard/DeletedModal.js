@@ -6,7 +6,7 @@ const DeletedModal = ({ deleteModald, setDetedModal,products,setProducts}) => {
 
     const handleDeleted = (id) => {
         console.log(id)
-        const url=`https://immense-plains-72444.herokuapp.com/orderdeleted/${id}`
+        const url=`http://localhost:5000/orderdeleted/${id}`
         fetch(url, {
            method:"DELETE" ,
             headers: {

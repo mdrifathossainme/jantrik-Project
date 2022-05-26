@@ -15,7 +15,7 @@ const MyOrder = () => {
 
   return (
       <>
-          <h1 className="text-4xl">Magepadj</h1>
+          <h1 className="text-4xl">All Order</h1>
       <div className="overflow-x-auto lg:py-12">
         <table className="table w-full">
           <thead>

@@ -20,7 +20,7 @@ const [user]=useAuthState(auth)
                 img,
             }
             
-        const url=`https://immense-plains-72444.herokuapp.com/review`
+        const url=`http://localhost:5000/review`
         fetch(url, {
             method: "POST",
             headers:{

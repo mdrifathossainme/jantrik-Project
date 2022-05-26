@@ -8,9 +8,9 @@ import Loading from '../../Components/Loading/Loading'
 const MyProfile = () => {
     const [user] = useAuthState(auth)
     const [onupm, setIpn] = useState(null)
-    const url = `https://immense-plains-72444.herokuapp.com/user/${user.email}`
+    const url = `http://localhost:5000/user/${user.email}`
     
-    const { data ,isLoading,refetch } = useQuery('updateuser', () => fetch(url,('https://immense-plains-72444.herokuapp.com/alluser',{
+    const { data ,isLoading,refetch } = useQuery('updateuser', () => fetch(url,('http://localhost:5000/alluser',{
       method: "GET",
       headers: {
         "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
