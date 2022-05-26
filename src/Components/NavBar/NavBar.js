@@ -7,8 +7,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase,init";
 import { signOut } from "firebase/auth";
 import {ic_logout} from 'react-icons-kit/md/ic_logout'
+import useAdmin from "../../hooks/useAdmin";
 const NavBar = ({ children }) => {
   const [user] = useAuthState(auth);
+  const[admin]=useAdmin(user)
 
 
   const handleLogout = () => {
@@ -61,10 +63,10 @@ const NavBar = ({ children }) => {
              
                 <Link to="/dashBoard">DashBoard</Link>
               </li>
-              <li>
+            {!admin&&  <li>
                 
                 <Link to="/dashBoard/myorder">My Order</Link>
-              </li>
+              </li>}
               <li>
                 <button onClick={handleLogout}>
                   <Icon icon={ic_logout}/> <span>Logout</span>
