@@ -3,25 +3,25 @@ import { useQuery } from "react-query";
 import Loading from "../../Components/Loading/Loading";
 import ProductModal from "./ProductModal";
 
-
-
-const  ManageProducts = () => {
-    const url='https://immense-plains-72444.herokuapp.com/products'
-    const { data, isLoading, refetch } = useQuery('allorder', () => fetch(url,{
+const ManageProducts = () => {
+  const url = "http://localhost:5000/products";
+  const { data, isLoading, refetch } = useQuery("allorder", () =>
+    fetch(url, {
       method: "GET",
       headers: {
-         "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
-      }
-    }).then(res => res.json()))
-    const [allProductsModal,setAllProductsModal]=useState(null)
-    
-    if (isLoading) {
-      return <Loading/>
+        authorization: `Bearer ${localStorage.getItem("asscessToken")}`,
+      },
+    }).then((res) => res.json())
+  );
+  const [allProductsModal, setAllProductsModal] = useState(null);
+
+  if (isLoading) {
+    return <Loading />;
   }
 
   return (
-      <>
-          <h1 className="text-4xl">All Product</h1>
+    <div className="pl-12 lg:px-4 py-8 ">
+      <h1 className="text-4xl pb-8 lg:pb-0">All Product</h1>
       <div className="overflow-x-auto lg:py-12">
         <table className="table w-full">
           <thead>
@@ -39,7 +39,7 @@ const  ManageProducts = () => {
               <tr key={dt._id}>
                 <th>{index + 1}</th>
                 <td>
-                   <div className="avatar">
+                  <div className="avatar">
                     <div className="w-16 rounded">
                       <img src={dt.img} />
                     </div>
@@ -48,24 +48,32 @@ const  ManageProducts = () => {
                 <td>{dt.name}</td>
                 <td>{dt.avilableQuantity}</td>
                 <td>${dt.price}</td>
-                   <td>
-                  <label onClick={() => setAllProductsModal(dt)} for="AllProducts" className="btn modal-button btn-xs btn-error ">Delete</label>
-                </td>              
                 <td>
-                 
+                  <label
+                    onClick={() => setAllProductsModal(dt)}
+                    for="AllProducts"
+                    className="btn modal-button btn-xs btn-error "
+                  >
+                    Delete
+                  </label>
                 </td>
-                <td>
-                 
-                </td>
+                <td></td>
+                <td></td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-    {allProductsModal&&<ProductModal refetch={refetch} setAllProductsModal={setAllProductsModal} allProductsModal={allProductsModal}></ProductModal>}
-    </>
+      {allProductsModal && (
+        <ProductModal
+          refetch={refetch}
+          setAllProductsModal={setAllProductsModal}
+          allProductsModal={allProductsModal}
+        ></ProductModal>
+      )}
+    </div>
   );
 };
 
-export default  ManageProducts;
+export default ManageProducts;

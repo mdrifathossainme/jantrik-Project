@@ -20,3 +20,14 @@
   
 }
 
+@media screen and (max-width:900px){
+  .homeBanner {
+  height: 30vh;
+}
+}
+@media screen and (max-width:600px){
+  .homeBanner {
+  height: 40vh;
+}
+}
+

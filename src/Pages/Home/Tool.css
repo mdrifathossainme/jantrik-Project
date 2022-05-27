@@ -7,3 +7,33 @@
 .tool-img{
     width: 150px;
 }
+.waider{
+
+}
+@media screen and (max-width:1000px){
+ .tool {
+  width: 600px;
+  margin: 0 20px;
+
+}
+.waider{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: center;
+  gap: 40px;
+}
+
+}
+@media screen and (max-width:600px){
+ .tool {
+  width: 250px;
+  margin: 0 20px;
+
+}.waider{
+  grid-template-columns: repeat(1,1fr);
+   gap: 0px;
+
+}
+
+}
+

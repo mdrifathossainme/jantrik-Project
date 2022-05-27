@@ -29,3 +29,8 @@
 .cart-body:hover{
    border: 1px solid rgba(188, 184, 184, 0.865);
 }
+@media screen and (max-width:900px){
+ .HandTools {
+  height: 30vh;
+}
+}

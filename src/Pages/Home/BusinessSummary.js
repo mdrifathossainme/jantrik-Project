@@ -16,7 +16,7 @@ const BusinessSummary = () => {
                     <div className="w-[150px] h-[3px] bg-success " ></div>
                 </div>
             </div>
-            <div className='grid lg:grid-cols-4 grid-cols-2 gap-4 py-8'>
+            <div className='grid md:grid-cols-4 grid-cols-2 gap-4 py-8'>
                 <div className="businessCard text-center ">
                     <span className='flex justify-center'><Icon className='text-success' icon={flag} size={70}></Icon></span>
                     <h1 className='text-4xl mt-4 mb-2'>143</h1>
@@ -42,10 +42,10 @@ const BusinessSummary = () => {
             </div>
             <div className='grid lg:grid-cols-2 grid-cols-1 mt-8 gap-8 border-2 p-8'>
                 <div>
-                    <h2 className='capitalize text-3xl text-success'>have a any question about us or get A product request</h2>
-                    <p className='capitalize text-xl mt-4'>don't hesitable contact us</p>
+                    <h2 className='capitalize lg:text-3xl md:text-2xl text-success'>have a any question about us or get A product request</h2>
+                    <p className='capitalize lg:text-xl mt-4'>don't hesitable contact us</p>
                 </div>
-                <div className=' flex  gap-4 items-end lg:justify-end'>
+                <div className=' flex  gap-4 flex-col md:flex-row md:items-end md:justify-end'>
                     
                     <span><button className='btn btn-success capitalize text-white'>request for quote</button></span>
                     <span> <button className='btn btn-primary capitalize text-white'>contact us</button></span>

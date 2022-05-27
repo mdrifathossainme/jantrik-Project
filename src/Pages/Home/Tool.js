@@ -8,7 +8,7 @@ const Tool = () => {
   const [hproduct, setHandle] = useState([]);
 
   useEffect(() => {
-    fetch("https://immense-plains-72444.herokuapp.com/products",{
+    fetch("http://localhost:5000/products",{
       method: "GET",
       headers: {
          "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
@@ -29,7 +29,7 @@ const Tool = () => {
             modules={[Navigation]}
             className="tool"
           >
-            <SwiperSlide className="tool1-slider">
+            <SwiperSlide className="tool1-slider waider">
                                {
                     hproduct.slice(0,6).map(product => <SwiperSlide key={product._id} className="handeItem">
                         
@@ -39,7 +39,7 @@ const Tool = () => {
                                  <img className="tool-img" src={product.img} alt="" />
                             </span>
                             <span>
-                                 <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white'}>{ product.discount}</h6>
+                                 <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
                            
                             <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
                                 <h6 className="font-bold text-sm">{product.name}</h6>
@@ -53,7 +53,7 @@ const Tool = () => {
                     </SwiperSlide>)
                 }  
             </SwiperSlide>
-            <SwiperSlide className="tool1-slider">
+            <SwiperSlide className="tool1-slider waider">
                                {
                     hproduct.slice(1,7).reverse().map(product => <SwiperSlide key={product._id} className="handeItem">
                         
@@ -63,7 +63,7 @@ const Tool = () => {
                                  <img className="tool-img" src={product.img} alt="" />
                             </span>
                             <span>
-                                 <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white'}>{ product.discount}</h6>
+                                    <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
                            
                             <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
                                 <h6 className="font-bold text-sm">{product.name}</h6>
@@ -77,7 +77,7 @@ const Tool = () => {
                     </SwiperSlide>)
                 }  
             </SwiperSlide>
-            <SwiperSlide className="tool1-slider">
+            <SwiperSlide className="tool1-slider waider">
                                {
                     hproduct.slice(3).reverse().map(product => <SwiperSlide key={product._id} className="handeItem">
                         
@@ -87,7 +87,7 @@ const Tool = () => {
                                  <img className="tool-img" src={product.img} alt="" />
                             </span>
                             <span>
-                                 <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white'}>{ product.discount}</h6>
+                                    <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
                            
                             <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
                                 <h6 className="font-bold text-sm">{product.name}</h6>

@@ -16,7 +16,7 @@ const Inventory = () => {
 
 
   useEffect(() => {
-    fetch(`https://immense-plains-72444.herokuapp.com/products/${id}`,{
+    fetch(`http://localhost:5000/products/${id}`,{
       method: "GET",
       headers: {
          "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
@@ -35,12 +35,14 @@ const Inventory = () => {
     
   }
      if (item?.orderquantity > newaQuantity.quantity) {
-     alert('Minimum order quantity: 2346')
+       toast.error('Minimum order quantity: 2346')
+       
     setnewaQuantity({ quantity: 2346 }) 
   }
   else if (item?.avilableQuantity < newaQuantity.quantity) {
-    alert('Maximum order quantity: 542487')
 
+
+       toast.error('Maximum order quantity: 542487')
        setnewaQuantity({ quantity: 542487 }) 
   }
 
@@ -74,7 +76,7 @@ const Inventory = () => {
   }
   else {
     
-    fetch('https://immense-plains-72444.herokuapp.com/order', {
+    fetch('http://localhost:5000/order', {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -99,7 +101,7 @@ const Inventory = () => {
 
   return (
     <div className="w-[80%] my-12 mx-auto py-12 ">
-      <div className="grid lg:grid-cols-2 grid-cols-1 gap-y-4">
+      <div className="grid md:grid-cols-2 grid-cols-1 md:gap-x-4 lg:gap-x-0 gap-y-4">
         <div className="flex justify-center">
           <img
             className="w-96 border-2"

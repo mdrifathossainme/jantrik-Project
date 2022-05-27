@@ -3,7 +3,7 @@ import React from 'react';
 const Categorise = () => {
     return (
         <div className=''>
-            <div className='grid lg:grid-cols-3  sm:gri-cols-1 gap-y-8 gap-x-4'>
+            <div className='grid lg:grid-cols-3  md:grid-cols-2  sm:gri-cols-1 lg:gap-y-8  gap-y-4 md:gap-x-4'>
             <div>
                     <img src="https://i.ibb.co/2kFxFdF/3-2.webp" alt="" />
             </div>

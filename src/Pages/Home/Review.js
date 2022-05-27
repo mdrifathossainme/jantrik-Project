@@ -11,14 +11,14 @@ const Review = () => {
   const [reviews,setReview]=useState([])
 
     useEffect(() => {
-        fetch('https://immense-plains-72444.herokuapp.com/reviews')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
         .then(data=>setReview(data))
     }, [])
     return (
         <div>
             <Swiper
-      slidesPerView={window.innerWidth<1000? 1:2}
+      slidesPerView={window.innerWidth<600? 1:2}
          spaceBetween={30}
         effect={"fade"}
         loop={true}

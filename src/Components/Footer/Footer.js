@@ -12,8 +12,8 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <>
-        <div className='grid lg:grid-cols-6 grid-cols-1 px-12 gap-8 bg-slate-100  pt-12'>
-            <div className='col-span-2'>
+        <div className='grid md:grid-cols-6  grid-cols-1 px-12 gap-8 bg-slate-100  pt-12'>
+            <div className='lg:col-span-2 md:col-span-3 col-span-2'>
                 <div><h5 className='text-xl'>Contact Us</h5></div>
                 <div className='py-4'>
                     <span className='flex gap-x-2 items-center '>
@@ -34,7 +34,7 @@ const Footer = () => {
                    
                 </div>
             </div>
-            <div>
+            <div className='md:col-span-3 lg:col-span-1'>
                 <div><h5 className='text-xl'>Information</h5></div>
                 <div className='py-4 flex flex-col gap-2'>
                     
@@ -47,7 +47,7 @@ const Footer = () => {
                    
                 </div>
             </div>
-            <div>
+            <div  className='md:col-span-2 lg:col-span-1'>
                 <div><h5 className='text-xl'>My Account</h5></div>
                 <div className='py-4 flex flex-col gap-2'>
                      <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">My Account</Link>
@@ -60,7 +60,7 @@ const Footer = () => {
                    
                 </div>
             </div>
-            <div>
+            <div className='md:col-span-2 lg:col-span-1'>
                 <div><h5 className='text-xl'>Customer Service</h5></div>
                 <div className='py-4 flex flex-col gap-2'>
                      <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">My Account</Link>
@@ -73,7 +73,7 @@ const Footer = () => {
                    
                 </div>
             </div>
-            <div>
+            <div className='md:col-span-2 lg:col-span-1'>
                 <div><h5 className='text-xl'>Let Us Help You</h5></div>
                 <div className='py-4 flex flex-col gap-2'>
                      <Link className='hover:text-primary hover:translate-x-3 transition delay-50 duration-300 ease-in-out'to="">Your Account</Link>

@@ -6,7 +6,7 @@ const Featured = () => {
     const [product] = useProducts()
 
     return (
-         <div className='grid lg:grid-cols-2  grid-cols-1 gap-8'>
+         <div className='grid md:grid-cols-2  grid-cols-1 gap-8'>
                {
                 product.slice(0,3).map(product =>
                     <div className='border-2 p-4 rounded-md' key={product._id}>

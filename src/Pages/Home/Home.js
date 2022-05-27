@@ -22,7 +22,7 @@ const Home = () => {
                
                  <HomeCarousel />
             </div>
-            <div className='categorise px-12 py-24'>
+            <div className='categorise lg:px-12 px-8 py-24'>
             <Categorise/>
             </div>
             <div className='px-12 '>
@@ -30,16 +30,16 @@ const Home = () => {
                 <div  className='divaidar mb-4'></div>
                 <HandToos/>
             </div>
-            <div className='px-12'>
+            <div className='lg:px-12 px-8 '>
                 <Toolset/>
             </div>
-            <div className='px-12'>
+            <div className='lg:px-12 px-8'>
                 <Tool/>
             </div>
-            <div className='px-12'>
+            <div className='lg:px-12 px-8'>
               <Services/>
             </div>
-            <div className='px-12'>
+            <div className='lg:px-12 px-8'>
               <BusinessSummary/>
             </div>
             <div className='px-12'>

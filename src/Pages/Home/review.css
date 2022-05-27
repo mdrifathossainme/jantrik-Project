@@ -1,3 +1,13 @@
 .review{
     height: 280px;
 }
+@media screen and (max-width:900px){
+.review{
+    height: 450px;
+}
+}
+@media screen and (max-width:600px){
+.review{
+    height: 500px;
+}
+}

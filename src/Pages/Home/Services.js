@@ -2,7 +2,7 @@ import React from 'react';
 
 const Services = () => {
     return (
-        <div className='py-4 grid lg:grid-cols-4 grid-cols-1 gap-4'>
+        <div className='py-4 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-4'>
             <div className="service-card flex gap-x-4 border-2 p-2 ">
                 <img src="https://i.ibb.co/rmz1t2Y/1-1.webp" alt="" />
                 <span>
