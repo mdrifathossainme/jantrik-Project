@@ -13,21 +13,6 @@ const AddProducts = () => {
   const imgApiKey = "2e23ea39c13302f51994cfeea7fa6d4b";
 
   const onSubmit = (data) => {
-    if (
-      parseInt(data.orderquantity) > 2345 &&
-      parseInt(data.orderquantity) < 542488
-    ) {
-      alert(
-        "যান্ত্রিক ত্রুটির কারণে আপনি ২৩৪৬  নিচে অর্ডার কোয়ান্টিটি সেট করতে পারবেন না এটা ফিক্সট  ফিক্সট করার কাজ চলিতেছে ,ধন্যবাদ"
-      );
-    } else if (
-      parseInt(data.avilableQuantity) < 542488 &&
-      parseInt(data.avilableQuantity) > 2345
-    ) {
-      alert(
-        "যান্ত্রিক ত্রুটির কারণে আপনি 542487  বেশি এভেলেবেল কোয়ান্টিটি সেট করতে পারবেন না এটা ফিক্সট  ফিক্সট করার কাজ চলিতেছে ,ধন্যবাদ"
-      );
-    } else {
       const image = data.img[0];
 
       const formData = new FormData();
@@ -71,7 +56,7 @@ const AddProducts = () => {
               }
             });
         });
-    }
+    
   };
 
   return (

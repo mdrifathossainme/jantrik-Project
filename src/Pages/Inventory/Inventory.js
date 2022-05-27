@@ -38,25 +38,16 @@ const Inventory = () => {
     setToggleQunatity(true)
     
   }
-     if (item?.orderquantity > newaQuantity.quantity) {
-       toast.error('Minimum order quantity: 2346')
-       
-    setnewaQuantity({ quantity: item?.orderquantity}) 
-  }
-  else if (item?.avilableQuantity < newaQuantity.quantity) {
-
-
-       toast.error('Maximum order quantity: 542487')
-       setnewaQuantity({ quantity: item?.avilableQuantity }) 
-  }
-
+  
+  const quantity = newaQuantity.quantity || item?.orderquantity
+  
   const order = {
     username: user.displayName,
     email: user.email,
     productname: item?.name,
-    quantity: newaQuantity.quantity,
+    quantity:quantity,
     price:item?.price,
-    totalPrice: newaQuantity.quantity * item?.price,
+    totalPrice: item?.price*quantity,
     img:item?.img
     
   }
@@ -68,15 +59,18 @@ const Inventory = () => {
 
 
   const handleSubmit = (e) => {
+
+
+
     e.preventDefault()
      if (item?.orderquantity > newaQuantity.quantity) {
-     alert('Minimum order quantity: 2346')
-    setnewaQuantity({ quantity: 2346 }) 
+     toast.error(`Minimum order quantity:${item?.orderquantity}`)
+    setnewaQuantity({ quantity: item?.orderquantity }) 
   }
-  else if (item?.avilableQuantity < newaQuantity.quantity) {
-    alert('Maximum order quantity: 542487')
+  else if (item?.avilableQuantity <= newaQuantity.quantity) {
+    toast.error(`Maximum order quantity:${item?.avilableQuantity}'`)
 
-       setnewaQuantity({ quantity: 542487 }) 
+       setnewaQuantity({ quantity: item?.avilableQuantity }) 
   }
   else {
     
@@ -97,7 +91,14 @@ const Inventory = () => {
           toast.error('You have already ordered this product')
           
         }
-    })
+      })
+       
+       const remainQantity = item?.avilableQuantity - quantity
+       
+       const url=``
+       
+       
+       
 
     }
     
@@ -133,7 +134,7 @@ const Inventory = () => {
                  Order Quantity:
                   <span>
                  
-                    <input className="border-2 ml-2  border-gray-300 p-2 w-36 h-8 rounded-md mr-4" onChange={handleQuanty} value={toggleQuntity===false? item?.orderquantity: newaQuantity.quantity} type="number" id="ide" />
+                    <input className="border-2 ml-2 name  border-gray-300 p-2 w-36 h-8 rounded-md mr-4" onChange={handleQuanty} value={toggleQuntity===false? item?.orderquantity: newaQuantity.quantity} type="number" id="ide" />
                   </span>
                 </h6>
                 
