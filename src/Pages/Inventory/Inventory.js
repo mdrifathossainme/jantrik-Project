@@ -8,10 +8,11 @@ const Inventory = () => {
 
   const { id } = useParams()
   const [item, setItem] = useState()
-
+  const [toggleQuntity,setToggleQunatity]=useState(false)
   const [newaQuantity, setnewaQuantity] = useState(
-   { quantity:2346}
+   { quantity:item?.orderquantity}
   )
+ 
   
 
 
@@ -22,28 +23,31 @@ const Inventory = () => {
          "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
       }
     })
+      
       .then(res => res.json())
     .then(data=>setItem(data))
   }, [item])
-  
+
+ 
   const handleQuanty = (e) => {
    
     const { quantity, ...rest } = newaQuantity
     const newQunaty = e.target.value
     const newitem = { quantity: newQunaty, ...rest }
     setnewaQuantity(newitem)
+    setToggleQunatity(true)
     
   }
      if (item?.orderquantity > newaQuantity.quantity) {
        toast.error('Minimum order quantity: 2346')
        
-    setnewaQuantity({ quantity: 2346 }) 
+    setnewaQuantity({ quantity: item?.orderquantity}) 
   }
   else if (item?.avilableQuantity < newaQuantity.quantity) {
 
 
        toast.error('Maximum order quantity: 542487')
-       setnewaQuantity({ quantity: 542487 }) 
+       setnewaQuantity({ quantity: item?.avilableQuantity }) 
   }
 
   const order = {
@@ -129,7 +133,7 @@ const Inventory = () => {
                  Order Quantity:
                   <span>
                  
-                    <input className="border-2 ml-2  border-gray-300 p-2 w-36 h-8 rounded-md mr-4" onChange={handleQuanty} value={newaQuantity.quantity} type="number" id="ide" />
+                    <input className="border-2 ml-2  border-gray-300 p-2 w-36 h-8 rounded-md mr-4" onChange={handleQuanty} value={toggleQuntity===false? item?.orderquantity: newaQuantity.quantity} type="number" id="ide" />
                   </span>
                 </h6>
                 
