@@ -1,17 +1,45 @@
+import colorNames from "daisyui/src/colors/colorNames";
 import React from "react";
-
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
+import auth from "../../firebase,init";
 const UpadeModal = ({ setIpn, user, refetch }) => {
-  const hanupde = (e) => {
-    e.preventDefault();
+  const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+  
+  
 
-    const eompany = e.target.cname.value;
-    const phone = e.target.phone.value;
-    const adress = e.target.adress.value;
-    const linkedin = e.target.linkedin.value;
-    const github = e.target.github.value;
-    const website = e.target.website.value;
+const imgStorKey=`d098b89ba40ba637ae5b99f2586771ac`
+const [updateProfile, updating, error] = useUpdateProfile(auth);
+  
+  const hanupde =async (e) => {
 
-    const updoc = {
+    const img = e.img[0]
+    const formData = new FormData()
+    formData.append('image', img)
+    
+    const url = `https://api.imgbb.com/1/upload?key=${imgStorKey}`
+    fetch(url, {
+      method: "POST",
+      body:formData
+    })
+      .then(res => res.json())
+      .then(result => {
+        if (result.success) {
+          const img = result.data.url
+
+          updateProfile({ photoURL: img })
+           refetch();
+
+    const eompany = e.cname;
+    const phone = e.phone;
+    const adress = e.adress;
+    const linkedin = e.linkedin;
+    const github = e.github.value;
+    const website = e.website;
+
+       const updoc = {
+      img,
       eompany,
       phone,
       adress,
@@ -31,97 +59,118 @@ const UpadeModal = ({ setIpn, user, refetch }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setIpn(null);
-        e.target.reset();
+       reset();
         refetch();
+        toast('Profile Update Complate')
       });
+
+
+        }
+    })
+
+    
   };
   return (
     <>
-      <input type="checkbox" id="updatemoba" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input type="checkbox" id="updatemoba" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <label
-            for="updatemoba"
-            class="btn btn-sm btn-circle absolute right-2 top-2"
+            htmlFor="updatemoba"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
           >
             ✕
           </label>
-          <form action onSubmit={hanupde}>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Company Name</span>
+          <form action onSubmit={handleSubmit(hanupde)}>
+
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Select your Photo</span>
+              </label>
+              <input 
+                {...register("img")}
+                type="file"
+                placeholder="Company Name"
+                className="input input-bordered"
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Company Name</span>
               </label>
               <input
-                name="cname"
-                required
+                   {...register("cname")}
+               
                 type="text"
                 placeholder="Company Name"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Phone Number</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Phone Number</span>
               </label>
               <input
-                name="phone"
-                required
+              {...register("phone")}
+
                 type="number"
                 placeholder="Phone Numbe"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
 
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Address</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Address</span>
               </label>
               <input
+                {...register("adress")}
                 name="adress"
-                required
                 type="text"
                 placeholder="Address"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Linkedin Link</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Linkedin Link</span>
               </label>
               <input
-                name="linkedin"
+                {...register("linkedin")}
+              
                 type="text"
                 placeholder="Linkedin Link"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">GitHub Link</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">GitHub Link</span>
               </label>
               <input
-                name="github"
+                  {...register("github")}
+            
                 type="text"
                 placeholder="GitHub Link"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
-            <div class="form-control">
-              <label class="label">
-                <span class="label-text">Website Link</span>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Website Link</span>
               </label>
               <input
-                name="website"
+                  {...register("website")}
+              
                 type="text"
                 placeholder="Website Link"
-                class="input input-bordered"
+                className="input input-bordered"
               />
             </div>
 
-            <div class="form-control mt-6">
-              <button type="submit" class="btn btn-primary">
+            <div className="form-control mt-6">
+              <button type="submit" className="btn btn-primary">
                 Update Profile
               </button>
             </div>

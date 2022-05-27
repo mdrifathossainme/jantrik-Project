@@ -8,8 +8,8 @@ const Navmodal = ({ onpeMobal }) => {
         <div className='t-0 w-28'>
 
             <input type="checkbox" id="onpenModal" className="modal-toggle" />
-            <label for="onpenModal" className="modal moda-endmodal-open sm:modal-middle">
-            <label className="modal-box   w-[30px]" for="navModal">
+            <label htmlFor="onpenModal" className="modal moda-endmodal-open sm:modal-middle">
+            <label className="modal-box   w-[30px]" htmlFor="navModal">
 
                     <button onClick={() => signOut(auth)}>Log Out</button>
                     <p>

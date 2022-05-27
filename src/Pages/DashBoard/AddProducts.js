@@ -13,7 +13,6 @@ const AddProducts = () => {
   const imgApiKey = "2e23ea39c13302f51994cfeea7fa6d4b";
 
   const onSubmit = (data) => {
-    console.log(parseInt(data.orderquantity));
     if (
       parseInt(data.orderquantity) > 2345 &&
       parseInt(data.orderquantity) < 542488
@@ -83,11 +82,11 @@ const AddProducts = () => {
           className="lg:w-[50%] w-[80%] mx-auto p-8 border-2 border-gray-300 mb-8 rounded-md "
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div class="form-control mb-4">
+          <div className="form-control mb-4">
             <input
               type="text"
               placeholder="Product Name"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("name", {
                 required: {
                   value: true,
@@ -95,11 +94,11 @@ const AddProducts = () => {
               })}
             />
           </div>
-          <div class="form-control mb-4">
+          <div className="form-control mb-4">
             <input
               type="number"
               placeholder="Order Quantity"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("orderquantity", {
                 required: {
                   value: true,
@@ -107,11 +106,11 @@ const AddProducts = () => {
               })}
             />
           </div>
-          <div class="form-control mb-4">
+          <div className="form-control mb-4">
             <input
               type="number"
               placeholder="Avilable Quantity"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("avilableQuantity", {
                 required: {
                   value: true,
@@ -119,11 +118,11 @@ const AddProducts = () => {
               })}
             />
           </div>
-          <div class="form-control mb-4">
+          <div className="form-control mb-4">
             <input
               type="number"
               placeholder="Price"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("price", {
                 required: {
                   value: true,
@@ -132,7 +131,7 @@ const AddProducts = () => {
               name="price"
             />
           </div>
-          <div class="form-control mb-4">
+          <div className="form-control mb-4">
             <textarea
               type="text"
               {...register("description", {
@@ -141,10 +140,10 @@ const AddProducts = () => {
                 },
               })}
               placeholder="Description"
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </div>
-          <div class="form-control mb-4">
+          <div className="form-control mb-4">
             <input
               {...register("img", {
                 required: {
@@ -155,7 +154,7 @@ const AddProducts = () => {
             />
           </div>
 
-          <button type="submit" class="btn btn-primary w-full">
+          <button type="submit" className="btn btn-primary w-full">
             Add Product
           </button>
         </form>

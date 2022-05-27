@@ -23,14 +23,20 @@ const NavBar = ({ children }) => {
       <li>
         <CustomLInk to="/">Home</CustomLInk>
       </li>
+      <li>
+        <CustomLInk to="/blog">Blog</CustomLInk>
+      </li>
+      <li>
+        <CustomLInk to="/myprotfolio">My Protfolio</CustomLInk>
+      </li>
       {user ? (
         <>
           <li className="moda-enddropdown moda-enddropdown-center hidden lg:block">
-            <label ctabIndex="0" className="moda-endbtn m-1">
+            <label  className="moda-endbtn m-1">
               {user.photoURL ? (
                 <>
                   <img
-                    className="w-[45px] rounded-full cursor-pointer border-2 border-primary"
+                    className="w-[45px] h-[45px] rounded-full cursor-pointer border-2 border-primary"
                     src={user.photoURL}
                     alt=""
                   />
@@ -46,7 +52,7 @@ const NavBar = ({ children }) => {
               )}
             </label>
             <ul
-              ctabIndex="0"
+           
               className="moda-centerdropdown-content moda-endmenu p-2 shadow bg-base-200 rounded-box w-52 z-10"
             >
               <li>
@@ -76,8 +82,8 @@ const NavBar = ({ children }) => {
 
 
 
-          <div class="dropdown dropdown-hover block lg:hidden">
-            <label tabindex="0" class="btn mx-1 p-0">
+          <div className="dropdown dropdown-hover block lg:hidden">
+            <label tabIndex="0" className="btn mx-1 p-0">
             {user.photoURL ? (
                 <>
                   <img
@@ -98,7 +104,7 @@ const NavBar = ({ children }) => {
             
             
             </label>
-           <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+           <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
              <li>
                
                 <Link to="/dashBoard"> My Profile</Link>
@@ -133,7 +139,7 @@ const NavBar = ({ children }) => {
           <li className="dropdown dropdown-hover dropdown-end hidden lg:block  ">
             <Icon className="hover:text-primary" icon={userCircleO} size={30} />
             <ul
-              ctabIndex="0"
+             
               className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
@@ -148,13 +154,13 @@ const NavBar = ({ children }) => {
 
 
 
-             <div class="dropdown dropdown-hover block lg:hidden">
-            <label tabindex="0" class="btn mx-1 p-1">
+             <div className="dropdown dropdown-hover block lg:hidden">
+            <label tabIndex="0" className="btn mx-1 p-1">
            <Icon className="hover:text-primary" icon={userCircleO} size={30} />
             
             
             </label>
-           <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+           <ul tabIndex="0" className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
                <li>
                 <CustomLInk to="/login">Login</CustomLInk>
               </li>

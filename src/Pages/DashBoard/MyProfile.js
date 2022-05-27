@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import auth from "../../firebase,init";
 import UpadeModal from "./UpadelModal";
@@ -22,10 +22,12 @@ const MyProfile = () => {
       })
     ).then((res) => res.json())
   );
-  console.log(data);
   if (isLoading) {
     return <Loading />;
   }
+
+
+
   return (
     <div>
       <div className="flex lg:flex-row flex-col p-12 lg:p-4 lg:gap-8">
@@ -33,25 +35,30 @@ const MyProfile = () => {
           {user?.photoURL ? (
             <>
               <img
-                className="w-[150px] rounded-full border-2"
-                src={user.photoURL}
+                className="w-[150px] h-[150px]  rounded-full border-2"
+                src={user?.photoURL}
                 alt=""
               />
             </>
           ) : (
-            <>
-              <img
-                className="w-[150px]"
+              <>
+                {data?.img? <img
+                className="w-[150px] h-[150px] rounded-full border-2"
+                src={data?.img}
+                alt=""
+              />:<img
+                className="w-[150px] rounded-full border-2"
                 src="https://i.ibb.co/TcFkJKX/download-1.png"
                 alt=""
-              />
+              />}
+              
             </>
           )}
 
           <label
             onClick={() => setIpn(user)}
-            for="updatemoba"
-            class="btn modal-button  btn-primary btn-sm text-white mt-4"
+            htmlFor="updatemoba"
+            className="btn modal-button  btn-primary btn-sm text-white mt-4"
           >
             {" "}
             Upadate Profilel

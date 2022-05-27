@@ -23,9 +23,9 @@ const CancelModal = ({ cancelModal, setCancelModal, refetch }) => {
 
   return (
     <>
-      <input type="checkbox" id="cancelModal" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input type="checkbox" id="cancelModal" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <h2>
             Are You Sure You Cancel{" "}
             <span className="font-bold text-red-600">
@@ -33,14 +33,14 @@ const CancelModal = ({ cancelModal, setCancelModal, refetch }) => {
             </span>{" "}
             this Order{" "}
           </h2>
-          <div class="modal-action">
+          <div className="modal-action">
             <label
               onClick={() => handleOrderDelete(cancelModal._id)}
-              class="btn bg-red-500 text-white"
+              className="btn bg-red-500 text-white"
             >
               Delete
             </label>
-            <label for="cancelModal" class="btn">
+            <label htmlFor="cancelModal" className="btn">
               Cancel
             </label>
           </div>

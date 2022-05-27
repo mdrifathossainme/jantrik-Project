@@ -23,8 +23,8 @@ const AllUser = () => {
     <div className="pl-8">
       {" "}
       <h1 className="text-4xl  pb-8 lg:pb-4">All User</h1>
-      <div class="overflow-x-auto">
-        <table class="table table-zebra w-full">
+      <div className="overflow-x-auto">
+        <table className="table table-zebra w-full">
           <thead>
             <tr>
               <th>No</th>

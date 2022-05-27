@@ -10,7 +10,7 @@ const DeletedModal = ({
   const [reset, setReset] = useState(false);
 
   const handleDeleted = (id) => {
-    console.log(id);
+
     const url = `http://localhost:5000/orderdeleted/${id}`;
     fetch(url, {
       method: "DELETE",
@@ -66,7 +66,7 @@ const DeletedModal = ({
             </label>
             <label
               onClick={() => setReset(!reset)}
-              for="deletedModal"
+              htmlFor="deletedModal"
               className="btn bg-slate-400"
             >
               Cancel

@@ -21,9 +21,9 @@ const ProductModal = ({ refetch, setAllProductsModal, allProductsModal }) => {
   };
   return (
     <>
-      <input type="checkbox" id="AllProducts" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input type="checkbox" id="AllProducts" className="modal-toggle" />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <h2>
             Are You Sure You Cancel{" "}
             <span className="font-bold text-red-600">
@@ -31,14 +31,14 @@ const ProductModal = ({ refetch, setAllProductsModal, allProductsModal }) => {
             </span>{" "}
             this Order{" "}
           </h2>
-          <div class="modal-action">
+          <div className="modal-action">
             <label
               onClick={() => handleAllProductDelete(allProductsModal._id)}
-              class="btn bg-red-500 text-white"
+              className="btn bg-red-500 text-white"
             >
               Delete
             </label>
-            <label for="AllProducts" class="btn">
+            <label htmlFor="AllProducts" className="btn">
               Cancel            </label>
           </div>
         </div>

@@ -17,15 +17,14 @@ const Payment = () => {
     fetch(url).then((res) => res.json())
   );
 
-  console.log(data);
   if (isLoading) {
     return <Loading />;
   }
   return (
     <>
-      <div class="card px-12 my-8 w-[90%]  bg-base-100 shadow-xl ">
-        <div class="card-body">
-          <h2 class="card-title text-success font-bold">
+      <div className="card px-12 my-8 w-[90%]  bg-base-100 shadow-xl ">
+        <div className="card-body">
+          <h2 className="card-title text-success font-bold">
             Hello {data.username}{" "}
           </h2>
           <h2 className="text-2xl font-semibold">
@@ -37,8 +36,8 @@ const Payment = () => {
           <h6 className="font-bold">Total price: ${data.totalPrice}</h6>
         </div>
       </div>
-      <div class="card px-12 w-[90%] bg-base-100 shadow-xl">
-        <div class="card-body">
+      <div className="card px-12 w-[90%] bg-base-100 shadow-xl">
+        <div className="card-body">
           <Elements stripe={stripePromise}>
             <CheckoutForm data={data} />
           </Elements>

@@ -72,7 +72,7 @@ const MyOrder = ({paymentIntent}) => {
                     </>}
                 </td>
                 <td>
-                  {!pt.paid&& <label for="deletedModal" onClick={()=>setDetedModal(pt)} className="btn btn-error btn-outline btn-xs modal-button"> Deleted</label>}
+                  {!pt.paid&& <label htmlFor="deletedModal" onClick={()=>setDetedModal(pt)} className="btn btn-error btn-outline btn-xs modal-button"> Deleted</label>}
                  
                 </td>
               </tr>
