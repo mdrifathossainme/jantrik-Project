@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import auth from "../../firebase,init";
-import UpadeModal from "./UpadelModal";
+import ProfileUpdateModal from "./ProfileUpdateModal";
 import Loading from "../../Components/Loading/Loading";
-
+import { camera } from 'react-icons-kit/fa/camera'
+import { Icon } from 'react-icons-kit'
 const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [onupm, setIpn] = useState(null);
@@ -32,10 +33,12 @@ const MyProfile = () => {
     <div>
       <div className="flex lg:flex-row flex-col p-12 lg:p-4 lg:gap-8">
         <div>
-          {user?.photoURL ? (
+          <div >
+          <span className=" relative">
+             {user?.photoURL ? (
             <>
               <img
-                className="w-[150px] h-[150px]  rounded-full border-2"
+                className="w-[150px] h-[150px]  rounded-full border-4 border-primary"
                 src={user?.photoURL}
                 alt=""
               />
@@ -47,23 +50,40 @@ const MyProfile = () => {
                 src={data?.img}
                 alt=""
               />:<img
-                className="w-[150px] rounded-full border-2"
+                className="w-[150px] rounded-full border-4 border-primary"
                 src="https://i.ibb.co/TcFkJKX/download-1.png"
                 alt=""
               />}
               
             </>
           )}
+        
 
           <label
+                onClick={() => setIpn(user)}
+                 for="phothoUpdateModal"
+            className=" modal-butto absolute cursor-pointer lg:bottom-2 bottom-3 lg:right-4 "
+            >
+                <span className="w-12 text-white h-12 p-2 border-2 rounded-full  bg-black">
+                  <label for="phothoUpdateModal"  class="modal-button"><Icon   className="cursor-pointer" icon={camera} size={20} /></label>
+                </span>
+         
+            </label>
+          
+          </span>
+          </div>
+          <span>
+                <label
             onClick={() => setIpn(user)}
             htmlFor="updatemoba"
-            className="btn modal-button  btn-primary btn-sm text-white mt-4"
-          >
-            {" "}
-            Upadate Profilel
-          </label>
+            className=" modal-butto btn btn-primary  text-white  mt-4 "
+            >
+            Update Datiles
+           
+            </label>
+         </span>
         </div>
+        
         <div className="mt-8">
           <h1 className="text-3xl font-bold ">{user?.displayName}</h1>
           <h2 className="mt-2">Email : {user?.email}</h2>
@@ -78,7 +98,7 @@ const MyProfile = () => {
         </div>
       </div>
       {onupm && (
-        <UpadeModal refetch={refetch} user={user} setIpn={setIpn}></UpadeModal>
+        <ProfileUpdateModal refetch={refetch} user={user} setIpn={setIpn}></ProfileUpdateModal>
       )}
     </div>
   );

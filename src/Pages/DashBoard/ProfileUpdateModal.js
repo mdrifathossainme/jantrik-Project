@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
 import auth from "../../firebase,init";
-const UpadeModal = ({ setIpn, user, refetch }) => {
+
+const ProfileUpdateModal = ({ setIpn, user, refetch }) => {
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
   
   
@@ -13,7 +14,48 @@ const imgStorKey=`d098b89ba40ba637ae5b99f2586771ac`
 const [updateProfile, updating, error] = useUpdateProfile(auth);
   
   const hanupde =async (e) => {
+    const eompany = e.cname;
+    const phone = e.phone;
+    const adress = e.adress;
+    const linkedin = e.linkedin;
+    const github = e.github;
+    const website = e.website;
 
+
+       const updoc = {
+      eompany,
+      phone,
+      adress,
+      linkedin,
+      github,
+      website,
+    };
+
+    const udurl = `http://localhost:5000/user/upprofile/${user.email}`;
+    fetch(udurl, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${localStorage.getItem("asscessToken")}`,
+      },
+      body: JSON.stringify(updoc),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setIpn(null);
+         reset();
+        refetch();
+        toast.success('Profile Update Complate')
+      });
+
+    
+  };
+
+
+
+
+const handlePhoto = (e) => {
+ 
     const img = e.img[0]
     const formData = new FormData()
     formData.append('image', img)
@@ -27,50 +69,29 @@ const [updateProfile, updating, error] = useUpdateProfile(auth);
       .then(result => {
         if (result.success) {
           const img = result.data.url
-
           updateProfile({ photoURL: img })
-           refetch();
-
-    const eompany = e.cname;
-    const phone = e.phone;
-    const adress = e.adress;
-    const linkedin = e.linkedin;
-    const github = e.github.value;
-    const website = e.website;
-
-       const updoc = {
-      img,
-      eompany,
-      phone,
-      adress,
-      linkedin,
-      github,
-      website,
-    };
-
-    const url = `http://localhost:5000/user/upprofile/${user.email}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
+      
+       const udurl = `http://localhost:5000/user/upprofile/${user.email}`;
+        fetch(udurl, {
+       method: "PUT",
+       headers: {
         "content-type": "application/json",
         authorization: `Bearer ${localStorage.getItem("asscessToken")}`,
       },
-      body: JSON.stringify(updoc),
+      body: JSON.stringify({img}),
     })
       .then((res) => res.json())
       .then((data) => {
         setIpn(null);
-       reset();
+        reset();
         refetch();
-        toast('Profile Update Complate')
+        toast.success('Image Update Complte')
       });
-
-
         }
     })
+}
 
-    
-  };
+
   return (
     <>
       <input type="checkbox" id="updatemoba" className="modal-toggle" />
@@ -83,18 +104,6 @@ const [updateProfile, updating, error] = useUpdateProfile(auth);
             ✕
           </label>
           <form action onSubmit={handleSubmit(hanupde)}>
-
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Select your Photo</span>
-              </label>
-              <input 
-                {...register("img")}
-                type="file"
-                placeholder="Company Name"
-                className="input input-bordered"
-              />
-            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Company Name</span>
@@ -175,10 +184,57 @@ const [updateProfile, updating, error] = useUpdateProfile(auth);
               </button>
             </div>
           </form>
+
         </div>
       </div>
+
+
+      <>
+      
+       
+
+
+<input type="checkbox" id="phothoUpdateModal" class="modal-toggle" />
+<div class="modal modal-bottom sm:modal-middle">
+          <div class="modal-box">
+             <label
+            htmlFor="phothoUpdateModal"
+            className="btn btn-sm btn-circle absolute right-2 top-2"
+          >
+            ✕
+          </label>
+            
+        <form onSubmit={handleSubmit(handlePhoto)}>
+         <div className="form-control">
+              <label className="label">
+                <span className="label-text">Select your Photo</span>
+              </label>
+              <input 
+                {...register("img")}
+                type="file"
+                placeholder="Company Name"
+                className="input input-bordered"
+              />
+        </div>
+         <div className="form-control mt-6">
+              <button type="submit" className="btn btn-primary">
+               Update Photo
+              </button>
+         </div>
+            </form>
+            
+
+
+    
+  </div>
+</div>
+
+
+      </>
+
+      
     </>
   );
 };
 
-export default UpadeModal;
+export default ProfileUpdateModal;

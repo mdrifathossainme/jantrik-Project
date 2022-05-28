@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useQuery } from "react-query";
 import Loading from "../../Components/Loading/Loading";
 import CancelModal from "./CancelModal";
@@ -39,38 +39,38 @@ const MyOrder = () => {
                 <td>{dt.username}</td>
                 <td>{dt.email}</td>
                 <td>{dt.productname}</td>
-                <td>${dt.quantity}</td>
+                <td>{dt.quantity}</td>
                 <td>${dt.price}</td>
                 <td>$ {dt.totalPrice}</td>
                 <td>
                   {dt.paid ? (
                     <>
-                      {" "}
+                   
                       <span className="text-success uppercase font-bold">
-                        {" "}
+                     
                         Paid
-                      </span>{" "}
+                      </span>
                     </>
                   ) : (
                     <>
-                      {" "}
+                  
                       <span className="text-red-500 uppercase font-bold">
                         Un Paid
-                      </span>{" "}
+                      </span>
                     </>
                   )}
                 </td>
                 <td>
                   {!dt.paid ? (
                     <>
-                      {" "}
+                    
                       <label
                         onClick={() => setCancelModal(dt)}
                         htmlFor="cancelModal"
                         className="btn modal-button btn-xs btn-error "
                       >
                         Cancel
-                      </label>{" "}
+                      </label>
                     </>
                   ) : (
                     <> </>

@@ -3,31 +3,35 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
 import auth from "../../firebase,init";
 import {  toast } from 'react-toastify';
+import { useQuery } from "react-query";
+import Loading from '../../Components/Loading/Loading'
 const Inventory = () => {
    const [user] = useAuthState(auth);
 
   const { id } = useParams()
-  const [item, setItem] = useState()
+  // const [item, setItem] = useState()
   const [toggleQuntity,setToggleQunatity]=useState(false)
-  const [newaQuantity, setnewaQuantity] = useState(
-   { quantity:item?.orderquantity}
-  )
+ 
  
   
 
+  const url = `http://localhost:5000/products/${id}`
+  
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`,{
-      method: "GET",
-      headers: {
-         "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
-      }
-    })
-      
-      .then(res => res.json())
-    .then(data=>setItem(data))
-  }, [item])
+  const { data: item, isLoading, refetch } = useQuery('singleProduct',()=> fetch(url).then(res => res.json()))
+  
 
+
+ const [newaQuantity, setnewaQuantity] = useState(
+   { quantity:item?.orderquantity}
+  )
+
+
+
+  if (isLoading) {
+  return <Loading/>
+}
+ 
  
   const handleQuanty = (e) => {
    
@@ -51,10 +55,14 @@ const Inventory = () => {
     img:item?.img
     
   }
- 
+  const remainQantity = item?.avilableQuantity - quantity
+          
+          const putItme = {
+            avilableQuantity:remainQantity
+          }
 
 
-
+    console.log(putItme)
 
 
 
@@ -68,7 +76,7 @@ const Inventory = () => {
     setnewaQuantity({ quantity: item?.orderquantity }) 
   }
   else if (item?.avilableQuantity <= newaQuantity.quantity) {
-    toast.error(`Maximum order quantity:${item?.avilableQuantity}'`)
+    toast.error(`Maximum order quantity:${item?.avilableQuantity}`)
 
        setnewaQuantity({ quantity: item?.avilableQuantity }) 
   }
@@ -86,6 +94,27 @@ const Inventory = () => {
       .then(data => {
         if (data.acknowledged === true) {
           toast.success('Your order has been completed')
+
+         
+   
+       const url=`http://localhost:5000/product/${item?._id}`
+       
+        fetch(url, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
+      },
+      body:JSON.stringify(putItme)
+        })
+         .then(res => res.json())
+          .then(data => {
+            console.log(data)
+            refetch()
+       })
+
+
+
         }
         if (data.success === false) {
           toast.error('You have already ordered this product')
@@ -93,11 +122,7 @@ const Inventory = () => {
         }
       })
        
-       const remainQantity = item?.avilableQuantity - quantity
-       
-       const url=``
-       
-       
+     
        
 
     }
