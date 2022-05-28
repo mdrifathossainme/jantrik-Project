@@ -10,7 +10,7 @@ const MyOrder = ({paymentIntent}) => {
   const [deleteModald, setDetedModal] = useState(null);
   const [products, setProducts ]= useState()
 
-  const url = `http://localhost:5000/myorder?email=${email}`;
+  const url = `https://immense-plains-72444.herokuapp.com/myorder?email=${email}`;
   
 
   useEffect(() => {

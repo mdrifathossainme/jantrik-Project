@@ -4,6 +4,9 @@ import { useForm } from 'react-hook-form';
 import auth from "../../firebase,init";
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile} from 'react-firebase-hooks/auth';
 import useToken from "../../hooks/useToken";
+import Loading from "../../Components/Loading/Loading";
+
+
 const SignUp = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const navigtae = useNavigate()
@@ -32,7 +35,9 @@ const SignUp = () => {
        
   };
 
-  
+  if (loading ||ctloading) {
+    return <Loading/>
+  }
 
   if (token) {
         navigtae('/')

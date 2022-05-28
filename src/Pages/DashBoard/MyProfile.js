@@ -6,15 +6,16 @@ import ProfileUpdateModal from "./ProfileUpdateModal";
 import Loading from "../../Components/Loading/Loading";
 import { camera } from 'react-icons-kit/fa/camera'
 import { Icon } from 'react-icons-kit'
+import PhotoUpdateNodal from "./PhotoUpdateNodal";
 const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [onupm, setIpn] = useState(null);
-  const url = `http://localhost:5000/user/${user.email}`;
+  const url = `https://immense-plains-72444.herokuapp.com/user/${user.email}`;
 
   const { data, isLoading, refetch } = useQuery("updateuser", () =>
     fetch(
       url,
-      ("http://localhost:5000/alluser",
+      ("https://immense-plains-72444.herokuapp.com/alluser",
       {
         method: "GET",
         headers: {
@@ -98,7 +99,10 @@ const MyProfile = () => {
         </div>
       </div>
       {onupm && (
-        <ProfileUpdateModal refetch={refetch} user={user} setIpn={setIpn}></ProfileUpdateModal>
+        <ProfileUpdateModal  refetch={refetch} user={user} setIpn={setIpn}></ProfileUpdateModal>
+      )}
+      {onupm && (
+        <PhotoUpdateNodal refetch={refetch} user={user} setIpn={setIpn}></PhotoUpdateNodal>
       )}
     </div>
   );

@@ -23,7 +23,7 @@ const AddReview = () => {
       img,
     };
 
-    const url = `http://localhost:5000/review`;
+    const url = `https://immense-plains-72444.herokuapp.com/review`;
     fetch(url, {
       method: "POST",
       headers: {

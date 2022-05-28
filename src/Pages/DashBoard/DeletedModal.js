@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 const DeletedModal = ({
   deleteModald,
   setDetedModal,
@@ -11,7 +12,7 @@ const DeletedModal = ({
 
   const handleDeleted = (id) => {
 
-    const url = `http://localhost:5000/orderdeleted/${id}`;
+    const url = `https://immense-plains-72444.herokuapp.com/orderdeleted/${id}`;
     fetch(url, {
       method: "DELETE",
       headers: {
@@ -27,17 +28,28 @@ const DeletedModal = ({
         }
       });
   };
+
   const handleDeletedConfirm = (e) => {
     const value = e.target.value;
     if (value === deleteModald.productname) {
       setDeleteConfirm(true);
-      e.target.reset();
+      if (deleteConfirm) {
+          e.target.reset();
+      }
+    
     } else {
       setDeleteConfirm(false);
-      e.target.reset();
     }
   };
 
+  const handleReset = () => {
+    const income = document.getElementById('delteidput');
+    income.value = ""
+    setDeleteConfirm(false)
+  }
+  
+
+ 
   return (
     <>
       <input type="checkbox" id="deletedModal" className="modal-toggle" />
@@ -51,13 +63,17 @@ const DeletedModal = ({
             Place type{" "}
             <span className="font-semibold">{deleteModald.productname}</span>
           </h6>
+
           <input
             onChange={handleDeletedConfirm}
+                id="delteidput"
             type="text"
             className="border-2 lg:w-full lg:h-12 px-2 border-gray-300 mt-4"
           />
+
           <div className="modal-action">
             <label
+          
               disabled={deleteConfirm === false}
               onClick={() => handleDeleted(deleteModald._id)}
               className="btn bg-red-500 hover:bg-red-500 text-white "
@@ -65,9 +81,9 @@ const DeletedModal = ({
               Deleted
             </label>
             <label
-              onClick={() => setReset(!reset)}
+              onClick={handleReset}
               htmlFor="deletedModal"
-              className="btn bg-slate-400"
+             className="btn bg-slate-400"
             >
               Cancel
             </label>
