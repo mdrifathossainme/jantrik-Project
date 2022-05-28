@@ -18,7 +18,7 @@ const MyOrder = () => {
     <div className="pl-12 lg:px-4 py-8  ">
       <h1 className="text-4xl pb-8 lg:pb-0">All Order</h1>
       <div className="overflow-x-auto lg:py-12">
-        <table className="table w-full">
+        <table className="table w-full table-normal/table-compact">
           <thead>
             <tr>
               <th>No.</th>
