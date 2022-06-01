@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
+import { useAuthState,} from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import auth from "../../firebase,init";
 import ProfileUpdateModal from "./ProfileUpdateModal";
@@ -10,12 +10,12 @@ import PhotoUpdateNodal from "./PhotoUpdateNodal";
 const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [onupm, setIpn] = useState(null);
-  const url = `https://immense-plains-72444.herokuapp.com/user/${user.email}`;
+  const url = `http://localhost:5000/user/${user.email}`;
 
   const { data, isLoading, refetch } = useQuery("updateuser", () =>
     fetch(
       url,
-      ("https://immense-plains-72444.herokuapp.com/alluser",
+      ("http://localhost:5000/alluser",
       {
         method: "GET",
         headers: {
@@ -31,7 +31,7 @@ const MyProfile = () => {
 
 
   return (
-    <div>
+    <div className="pt-12 z-50">
       <div className="flex lg:flex-row flex-col p-12 lg:p-4 lg:gap-8">
         <div>
           <div >

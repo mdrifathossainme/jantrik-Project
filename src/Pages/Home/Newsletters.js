@@ -1,8 +1,10 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 const Newsletters = () => {
     const handleSubcribe = (e) => {
         e.preventDefault()
         e.target.reset()
+        toast.success("Thank For  Subscribe")
     }
     return (
          <div className='flex justify-center mt-8'>

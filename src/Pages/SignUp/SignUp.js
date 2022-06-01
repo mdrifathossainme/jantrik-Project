@@ -27,13 +27,17 @@ const SignUp = () => {
       await createUserWithEmailAndPassword(data.email, data.password)
       await updateProfile({ displayName: data.displayName })
           
-        
-      reset()
+      if (user||ctuser) {
+           reset()
+      }
         
     }
         
        
   };
+  if (cterror || uperror) {
+    console.log(cterror?.message,uperror?.message)
+  }
 
   if (loading ||ctloading) {
     return <Loading/>
@@ -83,7 +87,10 @@ const SignUp = () => {
             <label className="label">
                <span className="label-text-alt"> 
                           {errors.email?.type === 'required' && <p className='text-red-500 text-[12px] font-bold'>Email required</p>}
-                          {errors.email?.type === 'pattern' && <p className='text-red-500 text-[12px] font-bold'>{errors.email.message}</p>}
+                {errors.email?.type === 'pattern' && <p className='text-red-500 text-[12px] font-bold'>{errors.email.message}</p>}
+                
+                {cterror ? <p className='text-red-500 text-[12px] font-bold capitalize'>{cterror?.message.slice(22,42) }</p>:""}
+                
                           
                           </span>
             </label>

@@ -11,7 +11,7 @@ const HandToos = () => {
     const [hproduct,setHandle]=useState([])
 
     useEffect(() => {
-        fetch('https://immense-plains-72444.herokuapp.com/products',{
+        fetch('http://localhost:5000/products',{
       method: "GET",
       headers: {
          "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
@@ -41,7 +41,7 @@ const HandToos = () => {
                             <h6 className={product.discount && ' absolute lg:left-4 left-2 md:left-0  top-2 rounded-none lg:top-8 btn btn-primary btn-sm text-white'}>{ product.discount}</h6>
                             <img src={product.img} alt="" />
                             <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
-                            <h4>{product.name}</h4>
+                            <h4 className="capitalize">{product.name}</h4>
                             <span className="flex justify-center gap-x-4">
                                 <h5>${product.price}</h5>
                                 <h5><del>${product.pprice}</del></h5>

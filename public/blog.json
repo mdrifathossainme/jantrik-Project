@@ -1,0 +1,45 @@
+[
+    {
+       
+       
+        "name":"How will you improve the performance of a React Application?",
+        "img":"https://i.ibb.co/SR0Z8MX/download-1.jpg",
+      
+        "description":" Internally, React uses several clever techniques to minimize the number of costly DOM operations required to update the UI. For many applications, using React will lead to a fast user interface without doing much work to specifically optimize for performance. Nevertheless, there are several ways you can speed up your React application.This can impact the React apps performance if we have an operation in a child component that takes time to compute. This brings us to our optimization techniques",
+        "point":"1.Keeping component state local where necessary2. Memoizing React components to prevent unnecessary re-renders3.Code-splitting in React using dynamic import4.Windowing or list virtualization in React.5.Lazy loading images in React."
+
+    },
+    {
+       
+       
+        "name":"What are the different ways to manage a state in a React application?",
+        "img":"https://i.ibb.co/yntB1n8/retina-1708x683-image-0-1967657e3078be54d78ccc4d57eae106-f763757d0bd43e58ff9976083b458547.png",
+      
+        "description":" There are dozens of state management tools on GitHub (e.g., Redux, MobX, Akita, Recoil, and Zustand). However, taking each of them into consideration would lead to endless research and comparisons. That’s why I narrowed down my selection to the three main competitors based on their popularity, usage, and maintainer.",
+        "inerimg":"https://i.ibb.co/6b5rHDQ/image-1626077078758-8f13c8c642a8caef9e37466be79cc830.gif",
+        "point":"To make the comparison explicit, I’ll use the following quality attributes:1.Usability2. Maintainability3.Performance4.Scalability (works with the same performance on the bigger states)5.Modifiability."
+
+    },
+    {
+       
+       
+        "name":"How does prototypical inheritance work?",
+        "img":"https://i.ibb.co/wRpNvNQ/inheritance.png",
+      
+        "description":" The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects. It is a method by which an object can inherit the properties and methods of another object. Traditionally, in order to get and set the [[Prototype]] of an object, we use Object.getPrototypeOf and Object.",
+        "inerimg":"https://i.ibb.co/3k7Vpcs/Untitled-Diagram108.png",
+        "point":"To make the comparison explicit, I’ll use the following quality attributes:1.Usability2. Maintainability3.Performance4.Scalability (works with the same performance on the bigger states)5.Modifiability."
+
+    },
+    {
+       
+       
+        "name":"What is a unit test? Why should write unit tests?",
+        "img":"https://i.ibb.co/yyhC3Vr/retina-1708x683-staging-toptal-net-qa-how-to-write-testable-code-and-why-it-matters-25bff356169b7ee5.png",
+      
+        "description":" UNIT TESTING : is a type of software testing where individual units or components of a software are tested. The purpose is to validate that each unit of the software code performs as expected. Unit Testing is done during the development (coding phase) of an application by the developers. Unit Tests isolate a section of code and verify its correctness. A unit may be an individual function, method, procedure, module, or object.",
+        "point":"Unit testing allows software developers to actually think through the design of the software and what has to be done before they write the code. This can help them to stay focused and can also help them to create much better designs."
+
+    }
+        
+]

@@ -10,7 +10,7 @@ const MyOrder = ({paymentIntent}) => {
   const [deleteModald, setDetedModal] = useState(null);
   const [products, setProducts ]= useState()
 
-  const url = `https://immense-plains-72444.herokuapp.com/myorder?email=${email}`;
+  const url = `http://localhost:5000/myorder?email=${email}`;
   
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const MyOrder = ({paymentIntent}) => {
   }, [])
   return (
     <div className="pl-8 pt-8 ">
-        <h1 className="text-2xl lg:text-4xl pb-8 lg:pb-0"> My All Order</h1>
+        <h1 className="text-2xl lg:text-4xl pb-8 lg:pb-4"> My All Order</h1>
 
       <div className="overflow-x-auto">
         <table className="table w-full">

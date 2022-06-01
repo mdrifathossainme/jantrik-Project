@@ -16,7 +16,7 @@ const TopRated = () => {
                         </div>
                         <div>
                                  <img className='w-[100px] ' src={product.rimg} alt="" />
-                            <h4 className='text-2xl' >{product.name}</h4>
+                            <h4 className='text-2xl capitalize' >{product.name}</h4>
                             <h6 >Avilable Quantity quantity : {product.avilableQuantity}</h6>
                             <h6 >Minimum order quantity : {product.orderquantity}</h6>
                             <span className=''>

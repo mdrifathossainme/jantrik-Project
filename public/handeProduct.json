@@ -1,106 +1,106 @@
 [
     {
        
-        "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Electric breast pumps",
+        "orderquantity":2000,
+        "avilableQuantity":1230000,
+        "name":"electric breast pumps",
         "img":"https://i.ibb.co/82vcrwc/1-1.webp",
         "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
-        "pprice":145,
+        "price":178,
+        "pprice":229,
         "description":" These models plug into a wall outlet and are typically the most powerful breast pumps you can buy. You can opt for a double-electric pump, "
     },
  
     {
        
-        "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Battery breast pumps.",
+        "orderquantity":1500,
+        "avilableQuantity":300000,
+        "name":"battery breast pumps.",
         "img":"https://i.ibb.co/6mmjkqh/2-1.webp",
             "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
-        "pprice":145,
+        "price":139,
+        "pprice":156,
         "description":" Battery-operated pumps come in both single and double models. There are also wireless breast pumps that allow for completely hands-free pumping. "
     },
     {
        
-        "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Manual breast pumps",
+        "orderquantity":1300,
+        "avilableQuantity":450000,
+        "name":"manual breast pumps",
         "img":"https://i.ibb.co/gZ2JKrN/3-3.webp",
             "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
-        "pprice":145,
+        "price":149,
+        "pprice":169,
         "discount":"30%",
         "description":" Manual pumps are hand-operated, requiring the user to squeeze a lever repeatedly to create suction on the breast and express milk."
     },
     {
        
-        "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Closed-system pump",
+        "orderquantity":1350,
+        "avilableQuantity":7400000,
+        "name":"closed system pump",
         "img":"https://i.ibb.co/Wt4c6Rk/4-3.webp",
             "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
+        "price":113,
         "pprice":145,
         "description":" A closed-system pump is one that is sealed off from the milk by a barrier (this feature is also called “overflow protection”). "
     },
    
     {
        
-     "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Open-system pump",
+     "orderquantity":1000,
+        "avilableQuantity":2560000,
+        "name":"open system pump",
         "img":"https://i.ibb.co/ZYnvbPr/5-1.webp",
             "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
-        "pprice":145,
+        "price":245,
+        "pprice":269,
         "description":" These don’t have a barrier between the milk and the pump mechanism, so milk flows through tubes and other small pieces into the bottle and therefore "
     },
     {
        
-     "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Pumping frequency",
+     "orderquantity":1200,
+        "avilableQuantity":12000000,
+        "name":"pumping frequency",
         "img":"https://i.ibb.co/j8w3dwQ/6.webp",
             "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
-        "pprice":145,
+        "price":89,
+        "pprice":105,
         "discount":"30%",
         "description":" Think about how often you’ll be pumping. If you plan to pump at least a couple of times a week, a manual pump doesn’t make sense, because you’ll t"
     },
     {
        
-        "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Noise Crompton.",
+        "orderquantity":1050,
+        "avilableQuantity":60000,
+        "name":"noise crompton.",
         "img":"https://i.ibb.co/jL3wS5S/7.webp",
             "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
-        "pprice":145,
+        "price":69,
+        "pprice":75,
         "description":"While no breast pump is entirely silent, some are louder than others. If you’ll be pumping around other people, in an office or during conference calls,"
     },
     {
        
-      "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Gear Pump",
+      "orderquantity":980,
+        "avilableQuantity":30000,
+        "name":"gear pump",
         "img":"https://i.ibb.co/hHQc65q/8.webp",
             "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
-        "pprice":145,
+        "price":450,
+        "pprice":465,
         "discount":"40%",
         "description":" These models plug into a wall outlet and are typically the most powerful breast pumps you can buy. You can opt for a double-electric pump,"
     },
     {
        
-      "orderquantity":2346,
-        "avilableQuantity":542487,
-        "name":"Ridial Piston Pump",
+      "orderquantity":1450,
+        "avilableQuantity":3450000,
+        "name":"ridial piston pump",
         "img":"https://i.ibb.co/xsWK6Wq/9.webp",
           "rimg":"https://i.ibb.co/6B0VPQz/four-golden-star-rating-illustration-260nw-1442679176-1.png",
-        "price":123,
-        "pprice":145,
+        "price":145,
+        "pprice":155,
         "description":" Parts like tubing and duck valves need to be replaced every so often. If you’ll be pumping frequently, it pays to pick a pump that’s compatible w"
     }
 ]

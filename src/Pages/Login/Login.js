@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Routes, useLocation, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword, useSignInWithGoogle} from "react-firebase-hooks/auth";
 import auth from "../../firebase,init";
@@ -12,7 +12,7 @@ const Login = () => {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [signInWithGoogle, user, loading, gerror] = useSignInWithGoogle(auth);
   const [resetFormToggle, setResetFormToggle] = useState(false);
-  const [passerror, setpassCerror] = useState('');
+  const [passerror, setpassCerror] = useState();
   const [signInWithEmailAndPassword, epuser, eploading, eperror] = useSignInWithEmailAndPassword(auth);
   const location = useLocation();
   const navigate = useNavigate();
@@ -25,18 +25,18 @@ const Login = () => {
 
  
   const onSubmit = async data => { 
-     
-    if (eperror || gerror) {
-      setpassCerror('error')
     
-    }
-    else {
-      await signInWithEmailAndPassword(data.email, data.password)
- 
-      reset()
   
+    await signInWithEmailAndPassword(data.email, data.password)
+    if (user || epuser) {
+      reset()
     }
+
+  
   };
+
+ 
+   
   let from = location.state?.from?.pathname || "/"
 
    useEffect(() => {
@@ -55,7 +55,8 @@ const Login = () => {
          toast("Check Your Mail")
     reset()
   }
-  
+
+
   
   return (
     <div className="my-12">
@@ -92,7 +93,13 @@ const Login = () => {
             />
             <label className="label">
                 <span className="label-text-alt"> 
-                          {errors.password?.type === 'required' && <p className='text-red-500 text-[12px] font-bold'>Password required</p>}
+                  {errors.password?.type === 'required' && <p className='text-red-500 text-[12px] font-bold'>Password required</p>}
+                  {eperror ? <p className='text-red-500 text-[12px] font-bold capitalize'>{ eperror.message.slice(22,36)}</p>:""}
+
+                  
+               
+                  
+                  
                       
                      
                 </span>

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import useProducts from '../../hooks/useProducts';
 
 const NewArrival = () => {
-    const [product] = useProducts()
+    const [product] = useProducts();
+    
     return (
         <div className='grid md:grid-cols-2  grid-cols-1 gap-8'>
                {
@@ -15,7 +16,7 @@ const NewArrival = () => {
                         </div>
                         <div>
                                  <img className='w-[100px] ' src={product.rimg} alt="" />
-                            <h4 className='text-2xl' >{product.name}</h4>
+                            <h4 className='text-2xl capitalize' >{product.name}</h4>
                             <h6 >Avilable Quantity quantity : {product.avilableQuantity}</h6>
                             <h6 >Minimum order quantity : {product.orderquantity}</h6>
                             <span className=''>

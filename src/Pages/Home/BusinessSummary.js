@@ -3,7 +3,9 @@ import { Icon } from 'react-icons-kit'
 import { flag } from 'react-icons-kit/fa/flag'
 import { desktop } from 'react-icons-kit/fa/desktop'
 import { group } from 'react-icons-kit/fa/group'
-import {ic_feedback} from 'react-icons-kit/md/ic_feedback'
+import { ic_feedback } from 'react-icons-kit/md/ic_feedback'
+import CountUp from 'react-countup'
+import { Link } from 'react-router-dom';
 const BusinessSummary = () => {
     return (
         <div className='py-12'>
@@ -19,22 +21,22 @@ const BusinessSummary = () => {
             <div className='grid md:grid-cols-4 grid-cols-2 gap-4 py-8'>
                 <div className="businessCard text-center ">
                     <span className='flex justify-center'><Icon className='text-success' icon={flag} size={70}></Icon></span>
-                    <h1 className='text-4xl mt-4 mb-2'>143</h1>
+                    <h1 className='text-4xl mt-4 mb-2'><CountUp end={ 143} duration={5} />+</h1>
                     <p className='text-success'>Countries</p>
                 </div>
                 <div className="businessCard text-center ">
                     <span className='flex justify-center'><Icon className='text-success' icon={desktop} size={70}></Icon></span>
-                    <h1 className='text-4xl mt-4 mb-2'>543+</h1>
+                    <h1 className='text-4xl mt-4 mb-2'><CountUp end={ 243} duration={2} />+</h1>
                     <p className='text-success'>Complete Project</p>
                 </div>
                 <div className="businessCard text-center ">
                     <span className='flex justify-center'><Icon className='text-success' icon={group} size={70}></Icon></span>
-                    <h1 className='text-4xl mt-4 mb-2'>769+</h1>
+                    <h1 className='text-4xl mt-4 mb-2'><CountUp end={ 533} duration={2} />+</h1>
                     <p className='text-success'>Happy Client</p>
                 </div>
                 <div className="businessCard text-center ">
                     <span className='flex justify-center'><Icon className='text-success' icon={ic_feedback} size={70}></Icon></span>
-                    <h1 className='text-4xl mt-4 mb-2'>243+</h1>
+                    <h1 className='text-4xl mt-4 mb-2'><CountUp end={ 160} duration={5} />+</h1>
                     <p className='text-success'>Feedback</p>
                 </div>
              
@@ -48,7 +50,7 @@ const BusinessSummary = () => {
                 <div className=' flex  gap-4 flex-col md:flex-row md:items-end md:justify-end'>
                     
                     <span><button className='btn btn-success capitalize text-white'>request for quote</button></span>
-                    <span> <button className='btn btn-primary capitalize text-white'>contact us</button></span>
+                    <span> <Link to="/contactus"><button className='btn btn-primary capitalize text-white'>contact us</button></Link></span>
                 </div>
                
             </div>

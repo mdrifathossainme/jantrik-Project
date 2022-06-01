@@ -19,7 +19,7 @@ const DashBoard = () => {
   return (
     <div className="drawer drawer-mobile">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-       <span className="flex justify-end pr-4 m-0 absolute right-12 cursor-pointer top-4">
+       <span className="flex justify-end pr-4 m-0 absolute z-50 right-12 cursor-pointer top-4">
           <label htmlFor="my-drawer-2" className="drawer-button  lg:hidden">
             {" "}
             <svg

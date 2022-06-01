@@ -14,7 +14,7 @@ const CheckoutForm = ({ data }) => {
 
   const { _id, price, patient, patientName } = data;
   useEffect(() => {
-    fetch("https://immense-plains-72444.herokuapp.com/create-payment-intent", {
+    fetch("http://localhost:5000/create-payment-intent", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -76,7 +76,7 @@ const CheckoutForm = ({ data }) => {
         transactionId: paymentIntent.id,
       };
 
-      fetch(`https://immense-plains-72444.herokuapp.com/complateorder/${_id}`, {
+      fetch(`http://localhost:5000/complateorder/${_id}`, {
         method: "PATCH",
         headers: {
           "content-type": "application/json",

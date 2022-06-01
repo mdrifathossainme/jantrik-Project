@@ -15,7 +15,7 @@ const Inventory = () => {
  
   
 
-  const url = `https://immense-plains-72444.herokuapp.com/products/${id}`
+  const url = `http://localhost:5000/products/${id}`
   
 
   const { data: item, isLoading, refetch } = useQuery('singleProduct',()=> fetch(url).then(res => res.json()))
@@ -82,7 +82,7 @@ const Inventory = () => {
   }
   else {
     
-    fetch('https://immense-plains-72444.herokuapp.com/order', {
+    fetch('http://localhost:5000/order', {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -97,7 +97,7 @@ const Inventory = () => {
 
          
    
-       const url=`https://immense-plains-72444.herokuapp.com/product/${item?._id}`
+       const url=`http://localhost:5000/product/${item?._id}`
        
         fetch(url, {
       method: "PUT",

@@ -11,23 +11,20 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
   
   const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
   const [newComparyNamet, setCompanyNamet]=useState(false)
+  const [newComparyName, setCompanyName] = useState()
   const [newPhonet, setphonet]=useState(false)
-  const [newComparyName, setCompanyName]=useState()
-  const [newphone, setphone]=useState()
-  
-  const allurl = `https://immense-plains-72444.herokuapp.com/user/${user.email}`;
+  const [newphone, setphone] = useState(false)
 
-   const { data, isLoading, refetch:alluserrefect } = useQuery("updateuser", () =>
-    fetch(
-      allurl,
-      ("https://immense-plains-72444.herokuapp.com/alluser",
-      {
+  
+  const allurl = `http://localhost:5000/user/${user.email}`;
+
+   const { data, isLoading, refetch:alluserrefect } = useQuery("updateuser", () =>fetch(allurl,{
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("asscessToken")}`,
-        },
+      },
       })
-    ).then((res) => res.json())
+    
   );
 
 
@@ -36,88 +33,21 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
 
 
 
-
   
-
   if (isLoading) {
     return <Loading />;
   }
   
-  
-
-
-  const handleCname = (e) => {
-      
-    const { eompany, ...rest } = data
-    const eupn = e.target.value
-    const newname={eompany:eupn,...rest}
-    setCompanyName(newname)
-    setCompanyNamet(true)
-    
-  }
-  const handlphone = (e) => {
-      
-    const { phone, ...rest } = data
-    const eupn = e.target.value
-    const newname={phone:eupn,...rest}
-    setCompanyName(newname)
-    setCompanyNamet(true)
-    
-  }
-
-  const handladress = (e) => {
-      
-    const { adress, ...rest } = data
-    const eupn = e.target.value
-    const newname={adress:eupn,...rest}
-    setCompanyName(newname)
-    setCompanyNamet(true)
-    
-  }
-  const handllinkedin = (e) => {
-      
-    const { linkedin, ...rest } = data
-    const eupn = e.target.value
-    const newname={linkedin:eupn,...rest}
-    setCompanyName(newname)
-    setCompanyNamet(true)
-    
-  }
-  const handlgithub = (e) => {
-      
-    const { github, ...rest } = data
-    const eupn = e.target.value
-    const newname={github:eupn,...rest}
-    setCompanyName(newname)
-    setCompanyNamet(true)
-    
-  }
-  const handlwebsite= (e) => {
-      
-    const { website, ...rest } = data
-    const eupn = e.target.value
-    const newname={website:eupn,...rest}
-    setCompanyName(newname)
-    setCompanyNamet(true)
-    if (eupn.length===0) {
-      setCompanyNamet(true)
-    }
-    
-  }
-
-  const modalCloge = () => {
-    setCompanyNamet(false)
-  }
 
 
   
   const hanupde =async (e) => {
-    const eompany = e.cname;
-    const phone = e.phone;
-    const adress = e.adress;
-    const linkedin = e.linkedin;
-    const github = e.github;
-    const website = e.website;
+    const eompany = e.cname||data.eompany;
+    const phone = e.phone||data.phone;
+    const adress = e.adress||data.adress;
+    const linkedin = e.linkedin||data.linkedin;
+    const github = e.github||data.github;
+    const website = e.website||data.website;
        const updoc = {
       eompany,
       phone,
@@ -127,7 +57,7 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
       website,
     };
 
-    const udurl = `https://immense-plains-72444.herokuapp.com/user/upprofile/${user.email}`;
+    const udurl = `http://localhost:5000/user/upprofile/${user.email}`;
     fetch(udurl, {
       method: "PUT",
       headers: {
@@ -146,12 +76,12 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
     
   };
   return (
-    <>
-      <input type="checkbox" id="updatemoba" className="modal-toggle" />
-      <div className="modal modal-bottom sm:modal-middle">
-        <div className="modal-box">
+    <div className="">
+      <input type="checkbox" id="updatemoba" className="modal-toggle z-50" />
+      <div className="modal modal-bottom sm:modal-middle z-50">
+        <div className="modal-box z-50">
           <label 
-            onClick={modalCloge}
+         
             htmlFor="updatemoba"
             className="btn btn-sm btn-circle absolute right-2 top-2"
           >
@@ -163,10 +93,9 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
                 <span className="label-text">Company Name</span>
               </label>
               <input
-            
-                {...register("cname")}
-                onChange={handleCname} 
-               value={newComparyNamet===true? newComparyName.eompany : data?.eompany}
+                    {...register("cname")}
+           
+             
                 type="text"
                 placeholder="Company Name"
                 className="input input-bordered"
@@ -177,10 +106,10 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
                 <span className="label-text">Phone Number</span>
               </label>
               <input
-                  {...register("phone")}
-              onChange={handlphone}
+                {...register("phone")}
               
-                value={newComparyNamet===true? newComparyName.phone : data?.phone}
+                
+              
                 type="number"
                 placeholder="Phone Numbe"
                 className="input input-bordered"
@@ -193,56 +122,56 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
               </label>
               <input
                   {...register("adress")}
-                onChange={handladress}
-              value={newComparyNamet===true? newComparyName.adress : data?.adress}
+                
+             
                 name="adress"
                 type="text"
                 placeholder="Address"
                 className="input input-bordered"
               />
             </div>
-            <div className="form-control">
+            {/* <div className="form-control">
               <label className="label">
                 <span className="label-text">Linkedin Profile Link</span>
               </label>
               <input
                        {...register("linkedin")}
-                   onChange={handllinkedin}
+                  
          
-                 value={newComparyNamet===true? newComparyName.linkedin : data?.linkedin}
+               
               
                 type="text"
                 placeholder="Linkedin Link"
                 className="input input-bordered"
               />
-            </div>
-            <div className="form-control">
+            </div> */}
+            {/* <div className="form-control">
               <label className="label">
                 <span className="label-text">GitHub Profile Link</span>
                 
               </label>
               <input
                        {...register("github")}
-                   onChange={handlgithub}
+                  
 
            
-                value={newComparyNamet===true? newComparyName.github : data?.github}
+               
             
                 type="text"
                 placeholder="GitHub Link"
                 className="input input-bordered"
               />
-            </div>
+            </div> */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Your Website Link</span>
               </label>
               <input
                           {...register("website")}
-                   onChange={handlwebsite}
+                
 
         
-                  value={newComparyNamet===true? newComparyName.website : data?.website}
+                
               
                 type="text"
                 placeholder="Website Link"
@@ -272,7 +201,7 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
       </>
 
       
-    </>
+    </div>
   );
 };
 

@@ -8,7 +8,7 @@ const Tool = () => {
   const [hproduct, setHandle] = useState([]);
 
   useEffect(() => {
-    fetch("https://immense-plains-72444.herokuapp.com/products",{
+    fetch("http://localhost:5000/products",{
       method: "GET",
       headers: {
          "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
@@ -42,7 +42,7 @@ const Tool = () => {
                                  <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
                            
                             <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
-                                <h6 className="font-bold text-sm">{product.name}</h6>
+                                <h6 className="font-bold text-sm capitalize">{product.name}</h6>
                             <span className="flex justify-center gap-x-4">
                                 <h5 className="font-bold">${product.price}</h5>
                                 <h5><del>${product.pprice}</del></h5>
@@ -66,7 +66,7 @@ const Tool = () => {
                                     <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
                            
                             <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
-                                <h6 className="font-bold text-sm">{product.name}</h6>
+                                <h6 className="font-bold text-sm capitalize">{product.name}</h6>
                             <span className="flex justify-center gap-x-4">
                                 <h5 className="font-bold">${product.price}</h5>
                                 <h5><del>${product.pprice}</del></h5>
@@ -90,7 +90,7 @@ const Tool = () => {
                                     <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
                            
                             <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
-                                <h6 className="font-bold text-sm">{product.name}</h6>
+                                <h6 className="font-bold text-sm capitalize">{product.name}</h6>
                             <span className="flex justify-center gap-x-4">
                                 <h5 className="font-bold">${product.price}</h5>
                                 <h5><del>${product.pprice}</del></h5>

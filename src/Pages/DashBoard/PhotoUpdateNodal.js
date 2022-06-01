@@ -29,7 +29,7 @@ const PhotoUpdateNodal = ({user,setIpn ,refetch}) => {
           const img = result.data.url
           updateProfile({ photoURL: img })
       
-       const udurl = `https://immense-plains-72444.herokuapp.com/user/upprofile/${user.email}`;
+       const udurl = `http://localhost:5000/user/upprofile/${user.email}`;
         fetch(udurl, {
        method: "PUT",
        headers: {

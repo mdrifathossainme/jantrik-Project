@@ -41,7 +41,7 @@ const AddProducts = () => {
             description,
             img,
           };
-          fetch("https://immense-plains-72444.herokuapp.com/addproduct", {
+          fetch("http://localhost:5000/addproduct", {
             method: "POST",
             headers: {
               "content-type": "application/json",

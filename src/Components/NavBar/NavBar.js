@@ -24,6 +24,13 @@ const NavBar = ({ children }) => {
         <CustomLInk to="/">Home</CustomLInk>
       </li>
       <li>
+        <CustomLInk to="/products">Products</CustomLInk>
+      </li>
+      <li>
+        <CustomLInk to="/contactus">Contact Us</CustomLInk>
+      </li>
+
+      <li>
         <CustomLInk to="/blog">Blog</CustomLInk>
       </li>
       <li>
@@ -176,11 +183,12 @@ const NavBar = ({ children }) => {
   return (
     <>
      
-      <div className="drawer drawer-end  ">
+      <div className="">
+         <div className="drawer drawer-end  ">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
 
-        <div className="drawer-content flex flex-col">
-          <div className="w-full navbar bg-base-100 lg:pr-36 lg:pl-12">
+        <div className="drawer-content flex flex-col ">
+          <div className="w-full navbar bg-base-100 sticky top-0  z-50 border-b-2 lg:pr-36 lg:pl-12">
             <div className="flex-1 px-2 mx-2">
               <Link to="/">
                 <img src="https://i.ibb.co/d0Fzt2W/logo.webp" alt="LOGO" />
@@ -218,6 +226,8 @@ const NavBar = ({ children }) => {
           </ul>
         </div>
       </div>
+      </div>
+       
     </>
   );
 };
