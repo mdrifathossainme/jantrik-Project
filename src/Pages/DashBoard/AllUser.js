@@ -8,7 +8,7 @@ const AllUser = () => {
     isLoading,
     refetch,
   } = useQuery("user", () =>
-    fetch("http://localhost:5000/alluser", {
+    fetch("https://immense-plains-72444.herokuapp.com/alluser", {
       method: "GET",
       headers: {
         authorization: `Bearer ${localStorage.getItem("asscessToken")}`,

@@ -5,7 +5,7 @@ import Loading from '../../Components/Loading/Loading';
 
 const SingleBoge = () => {
     const { id } = useParams()
-     const {data,isLoading}=useQuery('blog',()=>fetch(`http://localhost:5000/blog/${id}`).then(res=>res.json()))
+     const {data,isLoading}=useQuery('blog',()=>fetch(`https://immense-plains-72444.herokuapp.com/blog/${id}`).then(res=>res.json()))
 
   if (isLoading) {
     return<Loading/>

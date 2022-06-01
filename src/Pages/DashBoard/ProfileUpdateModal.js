@@ -16,7 +16,7 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
   const [newphone, setphone] = useState(false)
 
   
-  const allurl = `http://localhost:5000/user/${user.email}`;
+  const allurl = `https://immense-plains-72444.herokuapp.com/user/${user.email}`;
 
    const { data, isLoading, refetch:alluserrefect } = useQuery("updateuser", () =>fetch(allurl,{
         method: "GET",
@@ -57,7 +57,7 @@ const ProfileUpdateModal = ({ setIpn, onupm, user, refetch }) => {
       website,
     };
 
-    const udurl = `http://localhost:5000/user/upprofile/${user.email}`;
+    const udurl = `https://immense-plains-72444.herokuapp.com/user/upprofile/${user.email}`;
     fetch(udurl, {
       method: "PUT",
       headers: {

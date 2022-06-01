@@ -10,12 +10,12 @@ import PhotoUpdateNodal from "./PhotoUpdateNodal";
 const MyProfile = () => {
   const [user] = useAuthState(auth);
   const [onupm, setIpn] = useState(null);
-  const url = `http://localhost:5000/user/${user.email}`;
+  const url = `https://immense-plains-72444.herokuapp.com/user/${user.email}`;
 
   const { data, isLoading, refetch } = useQuery("updateuser", () =>
     fetch(
       url,
-      ("http://localhost:5000/alluser",
+      ("https://immense-plains-72444.herokuapp.com/alluser",
       {
         method: "GET",
         headers: {

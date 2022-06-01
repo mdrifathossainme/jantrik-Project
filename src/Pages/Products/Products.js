@@ -10,7 +10,7 @@ const Products = () => {
     const [reatured,setFeatured]=useState(false)
     
     useEffect(() => {
-    fetch("http://localhost:5000/products",{
+    fetch("https://immense-plains-72444.herokuapp.com/products",{
       method: "GET",
       headers: {
          "authorization":`Bearer ${localStorage.getItem('asscessToken')}`

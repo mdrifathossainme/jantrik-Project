@@ -8,7 +8,7 @@ import BlogDe from './BlogDe'
 const Blog = () => {
 const [blog ,setBlog]=useState([])
   
-  fetch(`http://localhost:5000/blog`)
+  fetch(`https://immense-plains-72444.herokuapp.com/blog`)
     .then(res => res.json())
   .then(data=>setBlog(data))
   
