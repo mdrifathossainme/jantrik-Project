@@ -3,16 +3,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./Tool.css";
 import { Navigation } from "swiper";
-import Tabs from '../../Components/Tab/Tabs'
+import Tabs from "../../Components/Tab/Tabs";
 const Tool = () => {
   const [hproduct, setHandle] = useState([]);
 
   useEffect(() => {
-    fetch("https://immense-plains-72444.herokuapp.com/products",{
+    fetch("https://immense-plains-72444.herokuapp.com/products", {
       method: "GET",
       headers: {
-         "authorization":`Bearer ${localStorage.getItem('asscessToken')}`
-      }
+        authorization: `Bearer ${localStorage.getItem("asscessToken")}`,
+      },
     })
       .then((res) => res.json())
       .then((data) => setHandle(data));
@@ -30,81 +30,137 @@ const Tool = () => {
             className="tool"
           >
             <SwiperSlide className="tool1-slider waider">
-                               {
-                    hproduct.slice(0,6).map(product => <SwiperSlide key={product._id} className="handeItem">
-                        
-                        <div className=" p-4 cart-body  delay-500">
-                            <span className="flex">
-                                 <span>
-                                 <img className="tool-img" src={product.img} alt="" />
-                            </span>
-                            <span>
-                                 <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
-                           
-                            <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
-                                <h6 className="font-bold text-sm capitalize">{product.name}</h6>
-                            <span className="flex justify-center gap-x-4">
-                                <h5 className="font-bold">${product.price}</h5>
-                                <h5><del>${product.pprice}</del></h5>
-                            </span>
-                           </span>
-                           </span>
-                        </div>
-                    </SwiperSlide>)
-                }  
+              {hproduct.slice(0, 6).map((product) => (
+                <SwiperSlide key={product._id} className="handeItem">
+                  <div className=" p-4 cart-body  delay-500">
+                    <span className="flex">
+                      <span>
+                        <img className="tool-img" src={product.img} alt="" />
+                      </span>
+                      <span>
+                        <h6
+                          className={
+                            product.discount &&
+                            " absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block"
+                          }
+                        >
+                          {product.discount}
+                        </h6>
+
+                        <span className="flex justify-center mt-4">
+                          <img
+                            className="w-[100px] "
+                            src={product.rimg}
+                            alt=""
+                          />
+                        </span>
+                        <h6 className="font-bold text-sm capitalize">
+                          {product.name}
+                        </h6>
+                        <span className="flex justify-center gap-x-4">
+                          <h5 className="font-bold">${product.price}</h5>
+                          <h5>
+                            <del>${product.pprice}</del>
+                          </h5>
+                        </span>
+                      </span>
+                    </span>
+                  </div>
+                </SwiperSlide>
+              ))}
             </SwiperSlide>
             <SwiperSlide className="tool1-slider waider">
-                               {
-                    hproduct.slice(1,7).reverse().map(product => <SwiperSlide key={product._id} className="handeItem">
-                        
-                         <div className=" p-4 cart-body  delay-500">
-                            <span className="flex">
-                                 <span>
-                                 <img className="tool-img" src={product.img} alt="" />
-                            </span>
-                            <span>
-                                    <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
-                           
-                            <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
-                                <h6 className="font-bold text-sm capitalize">{product.name}</h6>
-                            <span className="flex justify-center gap-x-4">
-                                <h5 className="font-bold">${product.price}</h5>
-                                <h5><del>${product.pprice}</del></h5>
-                            </span>
-                           </span>
-                           </span>
-                        </div>
-                    </SwiperSlide>)
-                }  
+              {hproduct
+                .slice(1, 7)
+                .reverse()
+                .map((product) => (
+                  <SwiperSlide key={product._id} className="handeItem">
+                    <div className=" p-4 cart-body  delay-500">
+                      <span className="flex">
+                        <span>
+                          <img className="tool-img" src={product.img} alt="" />
+                        </span>
+                        <span>
+                          <h6
+                            className={
+                              product.discount &&
+                              " absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block"
+                            }
+                          >
+                            {product.discount}
+                          </h6>
+
+                          <span className="flex justify-center mt-4">
+                            <img
+                              className="w-[100px] "
+                              src={product.rimg}
+                              alt=""
+                            />
+                          </span>
+                          <h6 className="font-bold text-sm capitalize">
+                            {product.name}
+                          </h6>
+                          <span className="flex justify-center gap-x-4">
+                            <h5 className="font-bold">${product.price}</h5>
+                            <h5>
+                              <del>${product.pprice}</del>
+                            </h5>
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </SwiperSlide>
+                ))}
             </SwiperSlide>
             <SwiperSlide className="tool1-slider waider">
-                               {
-                    hproduct.slice(3).reverse().map(product => <SwiperSlide key={product._id} className="handeItem">
-                        
-                     <div className=" p-4 cart-body  delay-500">
-                            <span className="flex">
-                                 <span>
-                                 <img className="tool-img" src={product.img} alt="" />
-                            </span>
-                            <span>
-                                    <h6 className={product.discount && ' absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block' }>{ product.discount}</h6>
-                           
-                            <span className="flex justify-center mt-4"><img className="w-[100px] " src={product.rimg} alt="" /></span>
-                                <h6 className="font-bold text-sm capitalize">{product.name}</h6>
-                            <span className="flex justify-center gap-x-4">
-                                <h5 className="font-bold">${product.price}</h5>
-                                <h5><del>${product.pprice}</del></h5>
-                            </span>
-                           </span>
-                           </span>
-                        </div>
-                    </SwiperSlide>)
-                }  
+              {hproduct
+                .slice(3)
+                .reverse()
+                .map((product) => (
+                  <SwiperSlide key={product._id} className="handeItem">
+                    <div className=" p-4 cart-body  delay-500">
+                      <span className="flex">
+                        <span>
+                          <img className="tool-img" src={product.img} alt="" />
+                        </span>
+                        <span>
+                          <h6
+                            className={
+                              product.discount &&
+                              " absolute left-2 rounded-none top-1 btn btn-primary btn-sm text-white hidden lg:block"
+                            }
+                          >
+                            {product.discount}
+                          </h6>
+
+                          <span className="flex justify-center mt-4">
+                            <img
+                              className="w-[100px] "
+                              src={product.rimg}
+                              alt=""
+                            />
+                          </span>
+                          <h6 className="font-bold text-sm capitalize">
+                            {product.name}
+                          </h6>
+                          <span className="flex justify-center gap-x-4">
+                            <h5 className="font-bold">${product.price}</h5>
+                            <h5>
+                              <del>${product.pprice}</del>
+                            </h5>
+                          </span>
+                        </span>
+                      </span>
+                    </div>
+                  </SwiperSlide>
+                ))}
             </SwiperSlide>
           </Swiper>
         </div>
       </div>
-      <div className=" lg:col-span-4"><Tabs/></div>
+      <div className=" lg:col-span-4">
+        <Tabs />
+      </div>
     </div>
   );
 };

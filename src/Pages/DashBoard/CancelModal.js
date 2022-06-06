@@ -1,5 +1,4 @@
 import React from "react";
-import { useQuery } from "react-query";
 import { toast } from "react-toastify";
 
 const CancelModal = ({ cancelModal, setCancelModal, refetch }) => {

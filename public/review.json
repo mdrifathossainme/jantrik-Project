@@ -1,44 +1,45 @@
 [
     {
-        "_id":1,
+        
         "img":"https://i.ibb.co/HtsP52z/images-1.jpg",
         "name":"Mizan",
-        "start":"https://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png",
-        "reviwe":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa repudiandae aut labore. Illo soluta, itaque voluptates quas esse nemo!"
+        "title":"Designer",
+        "reviwe":"Looking for some free blog sites to help you start sharing your writing with the world? Whether you just want to share updates with your family and friends or you want to"
     },
     { 
-        "_id":3,
+        
         "img":"",
         "name":"Akbor",
-        "start":"https://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png",
-        "reviwe":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa repudiandae aut labore. Illo soluta, itaque voluptates quas esse nemo!"
+        "title":"UX/UI Exprat",
+        
+        "reviwe":" Bluehost gives you a free domain name and lets you create a website from an easy-to-use interface. You also get an SSL and additional $2.75/month for 36 months straight"
     },
     {
-         "_id":2,
+         
         "img":"https://i.ibb.co/XSMy2HV/1506025544-1.jpg",
         "name":"Lavu Comitionar",
-          "start":"https://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png",
-        "reviwe":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa repudiandae aut labore. Illo soluta, itaque voluptates quas esse nemo!"
+          "title":"Developal",
+        "reviwe":"The nice thing about Wix is that it has free hosting included, so you just need to arrange the layouts, pick a template, and you’re all set. It provides a nice collection of"
     },
     {
-         "_id":4,
+         
         "img":"https://i.ibb.co/wyQg6rs/images.jpg",
         "name":"Shahalom",
-        "start":"https://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png",
-        "reviwe":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa repudiandae aut labore. Illo soluta, itaque voluptates quas esse nemo!"
+        "title":"Font-end Developar",
+        "reviwe":" To launch a Wix blog, just sign up and make a choice: you can either let the Wix ADI create a site for you based on a questionnaire or build your blog yourself – which"
     },
     {
-         "_id":5,
+         
         "img":"https://i.ibb.co/G3VYNsv/images-2.jpg",
         "name":"Kuddus ALi",
-        "start":"https://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png",
-        "reviwe":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa repudiandae aut labore. Illo soluta, itaque voluptates quas esse nemo!"
+        "title":"Backhand Developar",
+        "reviwe":" You can add multiple elements to your pages, from multimedia widgets to backgrounds, menus, typography, forms, video boxes etc. When you think the site is"
     },
     {
-         "_id":6,
+         
         "img":"https://i.ibb.co/4N8HF1n/photo-1438761681033-6461ffad8d80.jpg",
         "name":"Bodi Shohel",
-        "start":"https://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png",
-        "reviwe":" Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium ipsa repudiandae aut labore. Illo soluta, itaque voluptates quas esse nemo!"
+        "title":"Wordpress Developar",
+        "reviwe":" WordPress.org is the king of free blogging sites. It is a free platform, but you need to build the site mostly by yourself afterward. You also have to host the software yourself"
     }
 ]

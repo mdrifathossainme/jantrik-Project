@@ -8,7 +8,6 @@ const DeletedModal = ({
   setProducts,
 }) => {
   const [deleteConfirm, setDeleteConfirm] = useState(false);
-  const [reset, setReset] = useState(false);
 
   const handleDeleted = (id) => {
 

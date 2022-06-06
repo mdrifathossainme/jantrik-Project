@@ -17,8 +17,6 @@ const AddReview = () => {
     e.preventDefault();
     const reviwe = e.target.review.value;
     const name = user.displayName;
-    const start =
-      "https://i.ibb.co/KhVhL0v/five-5-star-rank-sign-illustration-free-vector.png";
     const img = user.photoURL
       ? user.photoURL
       : "https://i.ibb.co/TcFkJKX/download-1.png";
@@ -62,7 +60,7 @@ const AddReview = () => {
             return (
               <label>
               <input type="radio" className="hidden" value={rantingvalue} onClick={()=>setRating(rantingvalue)} />
-                <Icon className={`cursor-pointer mx-[2px] ease-in-out duration-300 text-${rantingvalue <= (rating||hoverRating) ? '[#ffc107]' : '[#e4e5e9]'}`} size={20} icon={star}
+                <Icon className={`cursor-pointer mx-[2px] ease-in-out duration-300 text-${rantingvalue <= (rating||hoverRating) ? 'red-500' : '[#e4e5e9]'}`} size={20} icon={star}
                 onMouseEnter={()=>setHoverRating(rantingvalue)}
                 onMouseLeave={()=>setHoverRating(null)}
                 />

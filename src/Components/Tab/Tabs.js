@@ -1,16 +1,11 @@
 import { useState } from "react";
-import './Tab.css'
-
-import { useNavigate } from "react-router-dom";
+import "./Tab.css";
 import NewArrival from "./NewArrival";
 import Featured from "./Featured";
 import TopRated from "./TopRated";
-const Tabs=()=> {
+const Tabs = () => {
   const [toggleState, setToggleState] = useState(1);
-  const navigate=useNavigate()
-const handleAllFood=()=>{
-navigate('/allFood')
-}
+
   const toggleTab = (index) => {
     setToggleState(index);
   };
@@ -28,7 +23,7 @@ navigate('/allFood')
           className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
           onClick={() => toggleTab(2)}
         >
-         Featured
+          Featured
         </button>
         <button
           className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
@@ -42,24 +37,23 @@ navigate('/allFood')
         <div
           className={toggleState === 1 ? "content  active-content" : "content"}
         >
-          
-          <NewArrival/>
+          <NewArrival />
         </div>
 
         <div
           className={toggleState === 2 ? "content  active-content" : "content"}
         >
-      <Featured/>
+          <Featured />
         </div>
 
         <div
           className={toggleState === 3 ? "content  active-content" : "content"}
         >
-          <TopRated/>
+          <TopRated />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Tabs;

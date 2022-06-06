@@ -92,8 +92,6 @@ const MyProfile = () => {
             <h2 className="mt-4">Company Name : {data?.eompany}</h2>
             <h2 className="mt-4">Phone : {data?.phone}</h2>
             <h2 className="mt-4">Address : {data?.adress}</h2>
-            <h2 className="mt-4">Linkedin Link: {data?.linkedin}</h2>
-            <h2 className="mt-4">GitHub Link : {data?.github}</h2>
             <h2 className="mt-4">Your Website Link : {data?.website}</h2>
           </div>
         </div>

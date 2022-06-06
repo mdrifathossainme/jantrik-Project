@@ -20,8 +20,8 @@ import "react-toastify/dist/ReactToastify.css";
 import ManageOrders from "./Pages/DashBoard/ManageOrders";
 import ManageProducts from "./Pages/DashBoard/ManageProducts";
 import MyProtfolio from "./Pages/MyProtfolio/MyProtfolio";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Products from "./Pages/Products/Products";
 import ContactUs from "./Pages/ContactUs/ContactUs";
@@ -29,7 +29,7 @@ import SingleBoge from "./Pages/Blog/SingleBoge";
 function App() {
   useEffect(() => {
     AOS.init();
-  },[])
+  }, []);
   return (
     <div className="App">
       <ToastContainer />
@@ -46,27 +46,30 @@ function App() {
             }
           />
           <Route path="/blog" element={<Blog />}></Route>
-          <Route path="/singleblog/:id" element={<SingleBoge/> }></Route>
-          <Route path="dashboard"element={
+          <Route path="/singleblog/:id" element={<SingleBoge />}></Route>
+          <Route
+            path="dashboard"
+            element={
               <RequierAuth>
                 <DashBoard />
-              </RequierAuth>}>
-              <Route index element={<MyProfile />}></Route>
-              <Route path="myorder" element={<MyOrder />}></Route>
-              <Route path="addproduct" element={<AddProducts />}></Route>
-              <Route path="addreview" element={<AddReview />}></Route>
-              <Route path="payment/:id" element={<Payment />}></Route>
-              <Route path="AllUser" element={<AllUser />}></Route>
-              <Route path="manageorders" element={<ManageOrders />}></Route>
-              <Route path="manageproducts" element={<ManageProducts />}></Route>
+              </RequierAuth>
+            }
+          >
+            <Route index element={<MyProfile />}></Route>
+            <Route path="myorder" element={<MyOrder />}></Route>
+            <Route path="addproduct" element={<AddProducts />}></Route>
+            <Route path="addreview" element={<AddReview />}></Route>
+            <Route path="payment/:id" element={<Payment />}></Route>
+            <Route path="AllUser" element={<AllUser />}></Route>
+            <Route path="manageorders" element={<ManageOrders />}></Route>
+            <Route path="manageproducts" element={<ManageProducts />}></Route>
           </Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/products" element={<Products />}></Route>
-          <Route path="/contactus" element={<ContactUs/>}></Route>
+          <Route path="/contactus" element={<ContactUs />}></Route>
           <Route path="/myprotfolio" element={<MyProtfolio />}></Route>
           <Route path="*" element={<NotFound />}></Route>
-
         </Routes>
       </NavBar>
     </div>
