@@ -32,9 +32,9 @@ const NavBar = ({ children }) => {
       <li>
         <CustomLInk to="/blog">Blog</CustomLInk>
       </li>
-      <li>
+      {/* <li>
         <CustomLInk to="/myprotfolio">My Protfolio</CustomLInk>
-      </li>
+      </li> */}
       {user ? (
         <>
           <li className="moda-enddropdown moda-enddropdown-center hidden lg:block">
